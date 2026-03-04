@@ -1,0 +1,165 @@
+/* ABOUT SECTION – Mobile First, dvh */
+#about {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 180px; 
+    padding-bottom: 140px; 
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+
+/* Background Blobs - FIXED: Single definition with transition */
+.gradient-bg {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 0; 
+    pointer-events: none;
+    opacity: 0; 
+    transition: opacity 0.6s ease-out;
+}
+
+.gradient-bg.visible {
+    opacity: 1;
+}
+
+
+.blob { 
+    position: absolute; 
+    border-radius: 50%; 
+    background: rgba(0, 0, 0, 0.07); 
+    filter: blur(50px); 
+}
+
+.blob:nth-child(1) { width: 400px; height: 400px; top: 20%; left: 10%; animation: float1 15s ease-in-out infinite; }
+.blob:nth-child(2) { width: 350px; height: 350px; top: 60%; left: 60%; animation: float2 18s ease-in-out infinite; }
+.blob:nth-child(3) { width: 300px; height: 300px; top: 40%; right: 15%; animation: float3 16s ease-in-out infinite; }
+.blob:nth-child(4) { width: 450px; height: 450px; bottom: 10%; left: 40%; animation: float4 20s ease-in-out infinite; }
+.blob:nth-child(5) { width: 320px; height: 320px; top: 10%; right: 25%; animation: float5 17s ease-in-out infinite; }
+
+
+@keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(80px, 120px); } }
+@keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(120px, -80px); } }
+@keyframes float3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(130px, 90px); } }
+@keyframes float4 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-130px, -100px); } }
+@keyframes float5 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-140px, -90px); } }
+
+
+/* CONTENT WRAPPER – kein horizontaler Overflow auf Mobile */
+.content-wrapper {
+    width: 92%; 
+    max-width: min(1600px, 100vw);
+    margin: 0 auto;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 2; 
+    text-align: left;
+}
+
+
+/* Constraint: user-select: none muss erhalten bleiben */
+#dynamic-text {
+    font-family: 'Montserrat', helvetica, sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 4vw + 1rem, 6rem); 
+    line-height: 1.1; 
+    letter-spacing: -0.02em;
+    color: #0c0c0c;
+    margin-bottom: 6rem; 
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+
+.char {
+    display: inline-block; 
+    will-change: filter, transform; 
+    backface-visibility: hidden;
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.char.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+/* SUB TEXT */
+.sub-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem; 
+    line-height: 1.6; 
+    color: #0c0c0c;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 4rem;
+    width: 100%; 
+    border-top: 1px solid rgba(0,0,0,0.15); 
+    padding-top: 3rem;
+}
+
+
+.col { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+
+#about.animate .col:nth-child(1) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+#about.animate .col:nth-child(2) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+#about.animate .col:nth-child(3) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+
+.sub-text h4 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: clamp(0.75rem, 2vw + 0.5rem, 0.9rem); 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    margin-bottom: 1.5rem; 
+    opacity: 0.6; 
+    color: #0c0c0c;
+}
+
+
+@media (max-width: 1024px) { 
+    .sub-text { 
+        grid-template-columns: 1fr; 
+        gap: 3rem; 
+    } 
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+    .content-wrapper {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    #dynamic-text {
+        margin-bottom: 3rem;
+    }
+}
+
