@@ -55,9 +55,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Bilou Flamingo",
-    "prevHref": "../?id=project_06",
+    "prevHref": "../project/?id=project_06",
     "nextLabel": "next project",
     "nextTitle": "Porsche",
-    "nextHref": "../?id=project_08"
+    "nextHref": "../project/?id=project_08"
   }
 }

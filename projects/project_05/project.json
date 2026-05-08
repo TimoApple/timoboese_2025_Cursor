@@ -76,9 +76,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Pro7",
-    "prevHref": "../?id=project_04",
+    "prevHref": "../project/?id=project_04",
     "nextLabel": "next project",
     "nextTitle": "Bilou Flamingo",
-    "nextHref": "../?id=project_06"
+    "nextHref": "../project/?id=project_06"
   }
 }

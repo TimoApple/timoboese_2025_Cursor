@@ -25,9 +25,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Neural Net",
-    "prevHref": "../?id=project_09",
+    "prevHref": "../project/?id=project_09",
     "nextLabel": "next project",
     "nextTitle": "Showreel",
-    "nextHref": "../?id=project_01"
+    "nextHref": "../project/?id=project_01"
   }
 }

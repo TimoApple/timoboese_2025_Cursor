@@ -25,9 +25,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Porsche",
-    "prevHref": "../?id=project_08",
+    "prevHref": "../project/?id=project_08",
     "nextLabel": "next project",
     "nextTitle": "Liquid Forms",
-    "nextHref": "../?id=project_10"
+    "nextHref": "../project/?id=project_10"
   }
 }

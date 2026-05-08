@@ -11,23 +11,78 @@
   "credits": [
     {
       "role": "Concept & Direction",
-      "name": "Timo BÃ¶se"
+      "name": "Timo Böse"
     }
   ],
-  "heroVideo": "assets/mov/project_03.webm",
+  "heroVideo": "assets/mov/project_02.webm",
   "gallery": [
     {
-      "type": "video",
-      "src": "assets/mov/project_03.webm",
-      "caption": "The Last Museum"
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/08.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/09.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/10.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/11.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/12.webp",
+      "caption": ""
     }
   ],
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Showreel",
-    "prevHref": "../?id=project_01",
+    "prevHref": "../project/?id=project_01",
     "nextLabel": "next project",
     "nextTitle": "Bilou Wednesday",
-    "nextHref": "../?id=project_03"
+    "nextHref": "../project/?id=project_03"
   }
 }

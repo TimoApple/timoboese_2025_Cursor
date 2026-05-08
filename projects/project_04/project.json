@@ -83,9 +83,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Bilou Wednesday",
-    "prevHref": "../?id=project_03",
+    "prevHref": "../project/?id=project_03",
     "nextLabel": "next project",
     "nextTitle": "Toca Me",
-    "nextHref": "../?id=project_05"
+    "nextHref": "../project/?id=project_05"
   }
 }

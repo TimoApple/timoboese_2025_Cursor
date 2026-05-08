@@ -68,9 +68,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Toca Me",
-    "prevHref": "../?id=project_05",
+    "prevHref": "../project/?id=project_05",
     "nextLabel": "next project",
     "nextTitle": "LEGO Aviation",
-    "nextHref": "../?id=project_07"
+    "nextHref": "../project/?id=project_07"
   }
 }

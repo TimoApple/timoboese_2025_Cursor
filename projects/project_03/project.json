@@ -18,11 +18,11 @@
       "name": "Timo BÃ¶se"
     }
   ],
-  "heroVideo": "assets/mov/project_02.webm",
+  "heroVideo": "assets/mov/project_03.webm",
   "gallery": [
     {
       "type": "video",
-      "src": "assets/mov/project_02.webm",
+      "src": "assets/mov/project_03.webm",
       "caption": "Bilou Wednesday"
     },
     {
@@ -39,9 +39,9 @@
   "nav": {
     "prevLabel": "back",
     "prevTitle": "The Last Museum",
-    "prevHref": "../?id=project_02",
+    "prevHref": "../project/?id=project_02",
     "nextLabel": "next project",
     "nextTitle": "Pro7 TV Idents",
-    "nextHref": "../?id=project_04"
+    "nextHref": "../project/?id=project_04"
   }
 }
