@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekt | Timo Böse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap&subset=latin,latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="../css/project.css?v=6">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body>
+  <svg style="width:0;height:0;position:absolute;">
+    <filter id="cloud-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+
+  <div class="ui-layer">
+    <a href="../index.html#work" class="btn-close" title="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </a>
+  </div>
+
+  <div id="project-content"></div>
+
+<script>
+/**
+ * project-loader.js – inline, kein Cache-Problem
+ */
+(function () {
+  function getProjectId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id") || "";
+  }
+
+  function resolveUrl(basePath, path) {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    if (path.startsWith("/")) return path;
+    var base = basePath.endsWith("/") ? basePath : basePath + "/";
+    var resolved = base + path;
+    var parts = resolved.split("/");
+    var result = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i] === "..") { result.pop(); }
+      else if (parts[i] !== ".") { result.push(parts[i]); }
+    }
+    return result.join("/");
+  }
+
+  function videoType(src) {
+    if (src.endsWith(".webm")) return "video/webm";
+    if (src.endsWith(".mp4")) return "video/mp4";
+    return "video/mp4";
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function buildPage(data, basePath) {
+    const heroSrc = resolveUrl(basePath, data.heroVideo || "");
+    const heroType = videoType(heroSrc);
+
+    let metaHtml = `
+      <div class="meta-block"><strong>Client</strong> ${escapeHtml(data.client || "")}</div>
+      <div class="meta-block"><strong>Role</strong> ${escapeHtml(data.role || "")}</div>
+      <div class="meta-block"><strong>Year</strong> ${escapeHtml(data.year || "")}</div>
+      <div class="meta-block"><strong>Agency</strong> ${escapeHtml(data.agency || "")}</div>`;
+
+    let descriptionHtml = "";
+    if (Array.isArray(data.description)) {
+      data.description.forEach(function (p) {
+        descriptionHtml += '<p class="anim-text">' + escapeHtml(p) + "</p>";
+      });
+    }
+
+    let creditsHtml = "";
+    if (Array.isArray(data.credits) && data.credits.length > 0) {
+      creditsHtml = '<div class="credits-list anim-text">';
+      data.credits.forEach(function (c) {
+        creditsHtml +=
+          '<div class="credit-item"><span class="credit-role">' +
+          escapeHtml(c.role) +
+          "</span> " +
+          escapeHtml(c.name) +
+          "</div>";
+      });
+      creditsHtml += "</div>";
+    }
+
+    const galleryLayout = data.galleryLayout || "horizontal";
+
+    let galleryHtml = "";
+    let gallerySectionClass = "horizontal-scroll-container";
+    if (Array.isArray(data.gallery)) {
+      if (galleryLayout === "grid") {
+        gallerySectionClass = "grid-scroll-container";
+        galleryHtml = '<div class="grid-gallery">';
+        data.gallery.forEach(function (item) {
+          const src = resolveUrl(basePath, item.src);
+          const caption = escapeHtml(item.caption || "");
+          if (item.type === "video") {
+            galleryHtml +=
+              '<div class="grid-item">' +
+              '<video autoplay muted loop playsinline src="' + src + '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)"></video>' +
+              '<div class="asset-caption">' + caption + "</div></div>";
+          } else {
+            galleryHtml +=
+              '<div class="grid-item">' +
+              '<img src="' + src + '" alt="' + caption + '" loading="eager" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Image failed:\',this.src)">' +
+              '<div class="asset-caption">' + caption + "</div></div>";
+          }
+        });
+        galleryHtml += "</div>";
+      } else {
+        // Horizontal-Layout (Standard)
+        data.gallery.forEach(function (item) {
+          const src = resolveUrl(basePath, item.src);
+          const caption = escapeHtml(item.caption || "");
+          const styleAttr = item.width ? ' style="width:' + escapeHtml(item.width) + '"' : "";
+          if (item.type === "video") {
+            galleryHtml +=
+              '<div class="gallery-item"' +
+              styleAttr +
+              '><video autoplay muted loop playsinline src="' +
+              src +
+              '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)">' +
+              '</video><div class="asset-caption">' +
+              caption +
+              "</div></div>";
+          } else {
+            galleryHtml +=
+              '<div class="gallery-item"' +
+              styleAttr +
+              '><img src="' +
+              src +
+              '" alt="' +
+              caption +
+              '" loading="eager" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Image failed:\',this.src)">' +
+              '<div class="asset-caption">' +
+              caption +
+              "</div></div>";
+          }
+        });
+      }
+    }
+
+    const nav = data.nav || {};
+    const prevHref = nav.prevHref || "index.html#work";
+    const nextHref = nav.nextHref || "index.html#work";
+    const prevTitle = nav.prevTitle || "Overview";
+    const nextTitle = nav.nextTitle || "";
+
+    return (
+      '<header class="hero-section">' +
+      '<div class="video-loader" id="mainLoader"></div>' +
+      '<video class="hero-video" id="mainVideo" autoplay muted loop playsinline>' +
+      '<source src="' + heroSrc + '" type="' + heroType + '">' +
+      "</video>" +
+      '<div class="hero-title"><h1>' +
+      escapeHtml(data.title || "") +
+      "</h1></div>" +
+      '<div class="scroll-hint-wrapper">' +
+      '<div class="scroll-text">SCROLL</div>' +
+      '<div class="scroll-hint-pill"><div class="scroll-dot"></div></div>' +
+      "</div>" +
+      '<div class="video-controls">' +
+      '<button class="ctrl-btn" id="btnReplay" title="Wiederholen">' +
+      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>' +
+      "</button>" +
+      '<button class="ctrl-btn" id="btnPlayPause" title="Play/Pause">' +
+      '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>' +
+      "</button>" +
+      '<button class="ctrl-btn" id="btnMute" title="Ton">' +
+      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>' +
+      "</button>" +
+      '<button class="ctrl-btn" id="btnFit" title="Anpassen">' +
+      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>' +
+      "</button>" +
+      "</div>" +
+      "</header>" +
+      '<div class="info-wrapper">' +
+      '<section class="info-section">' +
+      '<div class="info-meta">' +
+      metaHtml +
+      "</div>" +
+      '<div class="info-text">' +
+      descriptionHtml +
+      creditsHtml +
+      "</div>" +
+      "</section>" +
+      "</div>" +
+      '<section class="' + gallerySectionClass + '">' +
+      '<div class="sticky-viewport" id="viewport">' +
+      '<div class="horizontal-track" id="track">' +
+      galleryHtml +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<footer class="footer-nav">' +
+      '<div class="nav-block prev" onclick="window.location.href=\'' +
+      prevHref.replace(/'/g, "\\'") +
+      "'\">" +
+      '<div class="nav-label">' +
+      escapeHtml(nav.prevLabel || "Zurück") +
+      "</div>" +
+      '<div class="nav-title">' +
+      escapeHtml(prevTitle) +
+      "</div>" +
+      "</div>" +
+      '<div class="nav-block next" onclick="window.location.href=\'' +
+      nextHref.replace(/'/g, "\\'") +
+      "'\">" +
+      '<div class="nav-label">' +
+      escapeHtml(nav.nextLabel || "Nächstes Projekt") +
+      "</div>" +
+      '<div class="nav-title">' +
+      escapeHtml(nextTitle) +
+      "</div>" +
+      "</div>" +
+      "</footer>"
+    );
+  }
+
+  function showError(message) {
+    var root = document.getElementById("project-content");
+    if (root) {
+      root.innerHTML =
+        '<div class="project-error" style="padding:4rem;text-align:center;font-family:sans-serif;">' +
+        "<p>" +
+        escapeHtml(message) +
+        "</p>" +
+        '<p><a href="index.html#work">Zurück zur Übersicht</a></p>' +
+        "</div>";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var id = getProjectId();
+    if (!id) {
+      showError("Kein Projekt angegeben. URL: project.html?id=project_01");
+      return;
+    }
+
+    var basePath = "/projects/" + id;
+    var jsonUrl = basePath + "/project.json";
+
+    console.log("Loading project:", jsonUrl);
+    fetch(jsonUrl)
+      .then(function (r) {
+        console.log("Fetch response:", r.status, r.statusText);
+        if (!r.ok) throw new Error("HTTP " + r.status + ": " + r.statusText + " - " + jsonUrl);
+        return r.text();
+      })
+      .then(function (text) {
+        console.log("JSON received, parsing...");
+        try {
+          return JSON.parse(text);
+        } catch (e) {
+          console.error("JSON parse error:", e);
+          console.error("JSON text:", text.substring(0, 500));
+          throw new Error("JSON-Syntaxfehler: " + e.message);
+        }
+      })
+      .then(function (data) {
+        console.log("Project data loaded:", data.title);
+        document.title = (data.title || id) + " | Timo Böse";
+        var root = document.getElementById("project-content");
+        if (!root) {
+          console.error("project-content element not found!");
+          return;
+        }
+        root.innerHTML = buildPage(data, basePath);
+        if (window.initProjectPage) window.initProjectPage();
+      })
+      .catch(function (err) {
+        console.error("Project load error:", err);
+        showError("Projekt konnte nicht geladen werden: " + id + "<br><small>" + err.message + "</small>");
+      });
+  });
+
+  setTimeout(function() {
+    var root = document.getElementById("project-content");
+    if (root && root.innerHTML.trim() === "") {
+      console.warn("Project content empty after 5s — showing fallback");
+      showError("Projekt lädt nicht. Bitte Seite neu laden.");
+    }
+  }, 5000);
+})();
+</script>
+
+<script>
+/**
+ * project.js – inline, kein Cache-Problem
+ */
+(function () {
+  'use strict';
+
+  window.initProjectPage = function () {
+    console.log('🎬 initProjectPage');
+
+    const video = document.getElementById('mainVideo');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const btnReplay = document.getElementById('btnReplay');
+    const btnMute = document.getElementById('btnMute');
+    const btnFit = document.getElementById('btnFit');
+
+    if (video && btnPlayPause) {
+      btnPlayPause.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();
+          btnPlayPause.querySelector('svg').innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+        } else {
+          video.pause();
+          btnPlayPause.querySelector('svg').innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+        }
+      });
+    }
+
+    if (video && btnReplay) {
+      btnReplay.addEventListener('click', function () {
+        video.currentTime = 0;
+        video.play();
+      });
+    }
+
+    if (video && btnMute) {
+      btnMute.addEventListener('click', function () {
+        video.muted = !video.muted;
+        btnMute.classList.toggle('muted', video.muted);
+      });
+    }
+
+    if (video && btnFit) {
+      btnFit.addEventListener('click', function () {
+        video.style.objectFit = video.style.objectFit === 'contain' ? 'cover' : 'contain';
+        btnFit.classList.toggle('fit-contain');
+      });
+    }
+
+    const scrollHint = document.querySelector('.hero-section .scroll-hint-wrapper');
+    if (scrollHint) {
+      // Beim ersten Scroll ausblenden
+      var hideHint = function() {
+        scrollHint.style.opacity = '0';
+        window.removeEventListener('scroll', hideHint);
+        window.removeEventListener('wheel', hideHint);
+        window.removeEventListener('touchmove', hideHint);
+      };
+      window.addEventListener('scroll', hideHint, { passive: true });
+      window.addEventListener('wheel', hideHint, { passive: true });
+      window.addEventListener('touchmove', hideHint, { passive: true });
+    }
+
+    // === HORIZONTAL SCROLL GALLERY ===
+    const track = document.getElementById('track');
+    const viewport = document.getElementById('viewport');
+
+    if (track && viewport) {
+      // Drag-to-scroll (manuell)
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      viewport.addEventListener('mousedown', function (e) {
+        isDown = true;
+        viewport.classList.add('active');
+        startX = e.pageX - viewport.offsetLeft;
+        scrollLeft = viewport.scrollLeft;
+      });
+
+      viewport.addEventListener('mouseleave', function () {
+        isDown = false;
+        viewport.classList.remove('active');
+      });
+
+      viewport.addEventListener('mouseup', function () {
+        isDown = false;
+        viewport.classList.remove('active');
+      });
+
+      viewport.addEventListener('mousemove', function (e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - viewport.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        viewport.scrollLeft = scrollLeft - walk;
+      });
+
+      viewport.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].pageX - viewport.offsetLeft;
+        scrollLeft = viewport.scrollLeft;
+      }, { passive: true });
+
+      viewport.addEventListener('touchmove', function (e) {
+        const x = e.touches[0].pageX - viewport.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        viewport.scrollLeft = scrollLeft - walk;
+      }, { passive: true });
+
+      // Automatischer horizontaler Scroll beim vertikalen Scrollen
+      var scrollContainer = document.querySelector('.horizontal-scroll-container');
+      if (scrollContainer) {
+        // offsetTop erst beim ersten Scroll-Event berechnen (nach Render)
+        var cachedOffsetTop = null;
+        window.addEventListener('scroll', function() {
+          // offsetTop nach dem ersten Render cachen
+          if (cachedOffsetTop === null) {
+            cachedOffsetTop = scrollContainer.offsetTop;
+          }
+          var viewHeight = window.innerHeight;
+          var offsetTop = cachedOffsetTop;
+          var scrollY = window.scrollY;
+          var distance = scrollY - offsetTop;
+          var maxScroll = scrollContainer.offsetHeight - viewHeight;
+          var windowWidth = window.innerWidth;
+
+          if (distance >= 0) {
+            var trackWidth = track.scrollWidth;
+            var maxTranslate = Math.max(0, trackWidth - windowWidth + 100);
+            // 3x längere Scroll-Strecke für langsamere Bewegung
+            var progress = distance / (maxScroll * 3);
+            // Ease-Out für sanftes Abbremsen am Ende
+            var eased = 1 - Math.pow(1 - Math.min(progress, 1), 2);
+            var move = eased * maxTranslate;
+            track.style.transform = 'translateX(-' + move + 'px)';
+          }
+
+          // Background-Color-Übergang
+          if (distance >= 0 && distance <= maxScroll) {
+            var progress = distance / maxScroll;
+            var startColor = 245;
+            var endColor = 187;
+            var currentColor = Math.round(startColor - (progress * (startColor - endColor)));
+            scrollContainer.style.backgroundColor = 'rgb(' + currentColor + ', ' + currentColor + ', ' + currentColor + ')';
+          }
+        });
+      }
+    }
+
+    const loader = document.getElementById('mainLoader');
+    if (loader && video) {
+      video.addEventListener('loadeddata', function () {
+        loader.style.opacity = '0';
+        setTimeout(function () { loader.style.display = 'none'; }, 500);
+        video.classList.add('loaded');
+      });
+    }
+
+    // === TEXT ANIMATION SICHTBAR MACHEN ===
+    // .info-text p und .credits-list sichtbar machen
+    setTimeout(function() {
+      var textPs = document.querySelectorAll('.info-text p');
+      textPs.forEach(function(p) { p.classList.add('visible'); });
+      var credits = document.querySelector('.credits-list');
+      if (credits) credits.classList.add('visible');
+    }, 300);
+
+    console.log('✅ Project page initialized');
+  };
+
+})();
+</script>
+
+</body>
+</html>

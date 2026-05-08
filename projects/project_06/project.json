@@ -1,0 +1,76 @@
+{
+  "title": "Bilou â€“ Instagram Teaser",
+  "client": "Bilou / Philosophy Brands",
+  "role": "3D Lead & Motion",
+  "year": "2019",
+  "agency": "Direct",
+  "galleryLayout": "horizontal",
+  "description": [
+    "Collaboration with Bilou, a cosmetics brand by Bibisbeautypalace. Recreation of their iconic products in 3D with dynamic animations for social media channels."
+  ],
+  "credits": [
+    {
+      "role": "Client",
+      "name": "Philosophy Brands"
+    },
+    {
+      "role": "3D & Motion",
+      "name": "Timo BÃ¶se"
+    },
+    {
+      "role": "Music & Sound",
+      "name": "Giorgio Riolo"
+    }
+  ],
+  "heroVideo": "assets/mov/project_06.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_06.webm",
+      "caption": "Bilou â€“ Instagram Teaser"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Toca Me",
+    "prevHref": "../?id=project_05",
+    "nextLabel": "next project",
+    "nextTitle": "LEGO Aviation",
+    "nextHref": "../?id=project_07"
+  }
+}

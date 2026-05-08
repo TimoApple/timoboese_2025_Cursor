@@ -1,0 +1,63 @@
+{
+  "title": "LEGO â€“ Brick Aviation",
+  "client": "Personal Project",
+  "role": "Concept & Animation",
+  "year": "2017",
+  "agency": "-",
+  "galleryLayout": "horizontal",
+  "description": [
+    "A nostalgic journey merging two childhood passions: flying and Lego. Coming from a Lufthansa family, the fascination with aviation naturally developed at a young age."
+  ],
+  "credits": [
+    {
+      "role": "Concept & Animation",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_07.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_07.webm",
+      "caption": "LEGO â€“ Brick Aviation"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Bilou Flamingo",
+    "prevHref": "../?id=project_06",
+    "nextLabel": "next project",
+    "nextTitle": "Porsche",
+    "nextHref": "../?id=project_08"
+  }
+}

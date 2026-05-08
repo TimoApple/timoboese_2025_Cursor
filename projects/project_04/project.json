@@ -1,0 +1,91 @@
+{
+  "title": "Pro7 â€“ TV Idents",
+  "client": "ProSiebenSat.1 TV Deutschland GmbH",
+  "role": "Direction & Design",
+  "year": "2015",
+  "agency": "Woodblock",
+  "galleryLayout": "horizontal",
+  "description": [
+    "Designed and directed three captivating animations for Pro7, a prestigious German TV station. Each animation was meticulously crafted to represent a distinct color spectrum, symbolizing various programming categories.",
+    "Through expertise in design and direction, the animations came to life in collaboration with Woodblock."
+  ],
+  "credits": [
+    {
+      "role": "Client",
+      "name": "ProSiebenSat.1 TV Deutschland GmbH"
+    },
+    {
+      "role": "Direction & Design",
+      "name": "Timo BÃ¶se"
+    },
+    {
+      "role": "Production",
+      "name": "Woodblock"
+    },
+    {
+      "role": "Music & Sound",
+      "name": "Michael Fakesch"
+    }
+  ],
+  "heroVideo": "assets/mov/project_04.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_04.webm",
+      "caption": "Pro7 â€“ TV Idents"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/08.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/09.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Bilou Wednesday",
+    "prevHref": "../?id=project_03",
+    "nextLabel": "next project",
+    "nextTitle": "Toca Me",
+    "nextHref": "../?id=project_05"
+  }
+}

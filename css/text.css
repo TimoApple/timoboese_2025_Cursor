@@ -1,7 +1,5 @@
 /* ABOUT SECTION – Mobile First, dvh */
 #about {
-    min-height: 100vh;
-    min-height: 100dvh;
     background: #f5f5f5;
     position: relative;
     overflow: hidden;
@@ -11,9 +9,6 @@
     align-items: center; 
     padding-top: 180px; 
     padding-bottom: 140px; 
-
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 
@@ -150,8 +145,8 @@
 
 @media (max-width: 480px) {
     #about {
-        padding-top: 120px;
-        padding-bottom: 80px;
+        padding-top: 80px;
+        padding-bottom: 40px;
     }
     .content-wrapper {
         width: 100%;
@@ -159,6 +154,7 @@
         padding-right: 1rem;
     }
     #dynamic-text {
+        font-size: clamp(28px, 8vw, 48px) !important;
         margin-bottom: 3rem;
     }
 }

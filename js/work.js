@@ -1,40 +1,43 @@
-/* js/work.js - Simplified video playback */
+/* js/work.js - Video playback: hover (desktop) + viewport (mobile) */
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🎬 work.js loaded');
-    
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const projectItems = document.querySelectorAll('.project-item');
-    console.log(`Found ${projectItems.length} projects`);
-    
-    projectItems.forEach((item, i) => {
+
+    projectItems.forEach((item) => {
         const video = item.querySelector('video');
-        
-        if (!video) {
-            console.warn(`No video in project ${i}`);
-            return;
-        }
-        
-        console.log(`Setup video ${i}: ${video.src}`);
-        
-        // Set video properties
+        if (!video) return;
+
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
-        video.preload = 'metadata';
-        
-        // Pause initially
-        video.pause();
-        
-        // Play on hover
-        item.addEventListener('mouseenter', () => {
-            console.log(`▶ Play ${i}`);
-            video.play().catch(err => console.warn(`Play blocked ${i}:`, err));
-        });
-        
-        // Pause on leave
-        item.addEventListener('mouseleave', () => {
-            console.log(`⏸ Pause ${i}`);
+
+        if (isMobile) {
+            // Mobile: preload immediately, auto-play when visible
+            video.preload = 'auto';
+            video.load();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(item);
+        } else {
+            // Desktop: preload metadata, play on hover
+            video.preload = 'metadata';
             video.pause();
-            video.currentTime = 0;
-        });
+
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(() => {});
+            });
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        }
     });
 });

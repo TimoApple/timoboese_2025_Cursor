@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "Timo Böse — Motion Designer & Visual Designer Berlin",
+    "description": "Timo Böse — Freelance Motion Designer & Visual Designer in Berlin. Spezialisiert auf 3D/2D Animation, Motion Graphics, AI-Video Produktion und Grafikdesign.",
+    "og_title": "Timo Böse — Motion Designer & AI Video Producer Berlin",
+    "og_description": "Freelance Motion Designer, Grafikdesigner und AI-Video-Produzent in Berlin. 3D/2D Animation, Motion Graphics, KI-gestützte Videoproduktion."
+  },
+  "nav": {
+    "work": "Arbeiten",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "scroll": "SCROLLEN"
+  },
+  "about": {
+    "headline": "Bewegtbild, das Aufmerksamkeit verdient. Design, das sie hält.\nDirector und Motion Designer aus Berlin — für Marken, Produkte und digitale Kommunikation. Jedes Projekt beginnt mit einem Konzept. Endet mit Content, der seine Aufgabe erfüllt.",
+    "focus_title": "FOKUS",
+    "focus_text": "Jedes Projekt beginnt mit einer klaren visuellen Frage: Was soll das kommunizieren, und für wen? Die Antwort bestimmt alles — Format, Stil, Länge und Umsetzung. Keine Standardlösungen.",
+    "approach_title": "ANSATZ",
+    "approach_text": "Jedes Projekt beginnt mit einer Idee, nicht mit einem Tool. Der Workflow folgt dem Briefing — ob klassische 3D-Animation, traditionelles Compositing oder KI-generiertes Bildmaterial aus einer lokalen Pipeline. Das Ergebnis bestimmt die Methode, nicht umgekehrt.",
+    "background_title": "HINTERGRUND",
+    "background_text": "20+ Jahre in Motion. Berlin. Referenzen: Markenfilme, Musikvideos — darunter Projekte für Inner Visions — und vertrauliche HMI-Animationen für namhafte Automotive-OEMs."
+  },
+  "work": {
+    "showreel": "Showreel",
+    "showreel_meta": "Arbeitsproben",
+    "museum": "The Last Museum",
+    "museum_meta": "KI-Video Konzept",
+    "bilou_wed": "Bilou Wednesday",
+    "bilou_wed_meta": "Kampagnen-Visuals",
+    "pro7": "Pro7",
+    "pro7_meta": "TV-Idents",
+    "toca_me": "Toca Me",
+    "toca_me_meta": "Event-Opener",
+    "bilou_fla": "Bilou Flamingo",
+    "bilou_fla_meta": "Produktkampagne",
+    "lego": "LEGO",
+    "lego_meta": "Produktanimation",
+    "porsche": "Porsche",
+    "porsche_meta": "Genf Autosalon",
+    "neural": "Neural Net",
+    "neural_meta": "F&E System",
+    "liquid": "Liquid Forms",
+    "liquid_meta": "WebGL Experiment"
+  },
+  "whatido": {
+    "label": "WAS ICH MACHE",
+    "headline": "Drei Dinge, gut gemacht.",
+    "row1_title": "Erklär- & Produktvideos",
+    "row1_desc": "Präzise, klar, auf Conversion ausgelegt. Hunderte ausgeliefert.",
+    "row2_title": "Marken-Motion & 3D",
+    "row2_desc": "Logo-Animationen, Ident-Systeme, Cinema 4D-Visualisierung.",
+    "row3_title": "Social-Motion-Content",
+    "row3_desc": "Reels, Loops, animierte Ads — für den Feed gemacht."
+  },
+  "contact": {
+    "headline": "Haben Sie ein Projekt im Sinn?",
+    "headline_italic": "im Sinn?",
+    "email": "hello@timoboese.com",
+    "availability": "FÜR NEUE PROJEKTE VERFÜGBAR"
+  },
+  "footer": {
+    "mail": "MAIL",
+    "instagram": "INSTAGRAM",
+    "linkedin": "LINKEDIN",
+    "vimeo": "VIMEO",
+    "copyright": "© TIMO BÖSE 2025",
+    "imprint": "IMPRESSUM",
+    "privacy": "DATENSCHUTZ"
+  },
+  "language": {
+    "de": "DE",
+    "en": "EN"
+  }
+}

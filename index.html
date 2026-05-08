@@ -1,40 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timo Böse - Visual Designer</title>
     
+    <!-- ═══════ GOOGLE ANALYTICS ═══════ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG0K67H8PY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YG0K67H8PY');
+    </script>
+
+    <!-- ═══════ DYNAMIC META (Multi-Domain) ═══════ -->
+    <script>
+    (function() {
+      var host = window.location.hostname;
+      var base = 'https://' + host;
+      // Set canonical
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = base + '/';
+      // Set og:url
+      var ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = base + '/';
+      // Set og:image
+      var ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage) ogImage.content = base + '/og-image.jpg';
+      // Set twitter:image
+      var twImage = document.querySelector('meta[name="twitter:image"]');
+      if (twImage) twImage.content = base + '/og-image.jpg';
+    })();
+    </script>
+
+    <!-- ═══════ PRIMARY TITLE (i18n) ═══════ -->
+    <title data-i18n="meta.title">Timo Böse — Motion Designer & Visual Designer Berlin</title>
     
+    <!-- ═══════ SEO: META TAGS ═══════ -->
+    <meta name="description" content="Timo Böse — Freelance Motion Designer & Visual Designer in Berlin. Spezialisiert auf 3D/2D Animation, Motion Graphics, AI-Video Produktion und Grafikdesign. Kunden: Spotify, Google, Porsche, IBM, Adidas, LEGO.">
+    <meta name="keywords" content="Motion Designer Berlin, Animator Berlin, 3D Artist Berlin, Motion Graphics, After Effects, Cinema 4D, Blender, Visual Effects, Animation, 3D Animation, 2D Animation, AI-Video Produktion, KI Video, Grafikdesigner Berlin, Visual Designer, Creative Direction, premium downgrade, Timo Böse">
+    <meta name="author" content="Timo Böse">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="German, English">
+    <meta name="geo.region" content="DE-BE">
+    <meta name="geo.placename" content="Berlin">
     
+    <!-- ═══════ OPEN GRAPH ═══════ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://timoboese.com/">
+    <meta property="og:title" content="Timo Böse — Motion Designer & AI Video Producer Berlin">
+    <meta property="og:description" content="Freelance Motion Designer, Grafikdesigner und AI-Video-Produzent in Berlin. 3D/2D Animation, Motion Graphics, KI-gestützte Videoproduktion.">
+    <meta property="og:image" content="https://timoboese.com/og-image.jpg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Premium Downgrade — Timo Böse">
     
+    <!-- ═══════ TWITTER CARD ═══════ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Timo Böse — Motion Designer & AI Video Producer Berlin">
+    <meta name="twitter:description" content="Freelance Motion Designer, 3D Artist & AI Video Producer in Berlin. 3D/2D Animation, Motion Graphics, KI-Video.">
+    <meta name="twitter:image" content="https://timoboese.com/og-image.jpg">
     
-    <link rel="stylesheet" href="./css/main.combined.css">
+    <!-- ═══════ CANONICAL / FAVICON ═══════ -->
+    <link rel="canonical" href="https://timoboese.com/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="alternate" hreflang="de" href="https://timoboese.com/">
+    <link rel="alternate" hreflang="en" href="https://timoboese.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://timoboese.com/">
+    
+    <!-- ═══════ AI SEARCH OPTIMIZATION: Structured Data ═══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Person", "CreativeProfessional"],
+      "name": "Timo Böse",
+      "url": "https://timoboese.com",
+      "jobTitle": ["Motion Designer", "Visual Designer", "AI Video Producer", "3D Artist", "Grafikdesigner"],
+      "description": "Timo Böse is a freelance motion designer, visual designer, and AI video producer based in Berlin, Germany. Specializing in 3D/2D animation, motion graphics, AI-generated video content, and graphic design for brands like Spotify, Google, Porsche, IBM, Adidas, and LEGO.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "knowsAbout": [
+        "Motion Design", "3D Animation", "2D Animation", "Motion Graphics",
+        "AI Video Production", "KI-Video Produktion", "Graphic Design",
+        "Visual Effects", "After Effects", "Cinema 4D", "Blender",
+        "Creative Direction", "Generative AI", "AI-gestützte Videoproduktion",
+        "3D Modeling", "Character Animation", "Visual Storytelling"
+      ],
+      "sameAs": [
+        "https://vimeo.com/timoboese",
+        "https://www.linkedin.com/in/timoboese",
+        "https://www.xing.com/profile/Timo_Boese",
+        "https://www.instagram.com/premiumdowngrade/"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Motion Designer & AI Video Producer",
+        "skills": ["Motion Design", "3D Animation", "AI Video Production", "Graphic Design", "Cinema 4D", "After Effects", "Blender", "Creative Direction"]
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Graphic Design"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Premium Downgrade — Motion Design & AI Video Studio",
+      "description": "Freelance motion design, animation, AI video production, and graphic design studio in Berlin.",
+      "url": "https://timoboese.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "priceRange": "$$$",
+      "serviceType": ["Motion Design", "AI Video Production", "3D Animation", "2D Animation", "Graphic Design", "Creative Direction", "Visual Effects"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was macht ein Motion Designer in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timo Böse ist ein freiberuflicher Motion Designer und Visual Designer in Berlin. Er erstellt 3D- und 2D-Animationen, Motion Graphics, AI-generierte Videos und Grafikdesign für internationale Marken wie Spotify, Google, Porsche, IBM und Adidas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bietet Timo Böse AI-Video Produktion an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Timo Böse spezialisiert sich auf AI-Video Produktion (KI-Video Produktion) und nutzt generative AI-Tools für innovative Videokampagnen, Motion Graphics und visuelle Inhalte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Tools verwendet Timo Böse für Motion Design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timo Böse arbeitet mit After Effects, Cinema 4D, Blender, Adobe Creative Suite und verschiedenen AI-Tools für generative Video-Produktion und Motion Graphics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo finde ich einen 3D Artist in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timo Böse ist ein erfahrener 3D Artist und Motion Designer in Berlin. Er erstellt 3D-Animationen, Produktvisualisierungen und KI-gestützte 3D-Inhalte für Marken wie Porsche, LEGO und Adidas."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ═══════ CSS ═══════ -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/header.css?v=2">
+    <link rel="stylesheet" href="css/text.css?v=2">
+    <link rel="stylesheet" href="css/work.css?v=2">
+    <link rel="stylesheet" href="css/footer.css?v=2">
+    
+    <!-- ═══════ SCRIPTS ═══════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="./js/i18n.js" defer></script>
+    
+<style>
+/* ═══════ PAGE TRANSITION ═══════ */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-out;
+  z-index: 999;
+}
+.page-transition.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
 </head>
 <body>
 
     <header id="siteHeader" class="site-header">
         <div class="logo" id="lottieLogoContainer"></div>
-       <nav class="main-nav">
-  <ul>
-    <li><a href="#work" class="nav-work">Work</a></li>
-    <li><a href="#about" class="nav-about">About</a></li>
-    <li><a href="#footer-snap-point" class="nav-contact">Contact</a></li>
-  </ul>
-</nav>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#work" class="nav-work" data-i18n="nav.work">Work</a></li>
+                <li><a href="#about" class="nav-about" data-i18n="nav.about">About</a></li>
+                <li><a href="#footer-snap-point" class="nav-contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="lang-switch">
+                    <button class="lang-switch-btn lang-current" data-lang="de">
+                        <span class="lang-label">DE</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-switch-btn" data-lang="de">DE</button>
+                        <button class="lang-switch-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         
         <section id="landing">
-            <video loading="lazy" autoplay muted loop playsinline id="heroVideo" preload="none" loading="lazy" aria-label="Hero motion design showcase">
+            <video autoplay muted loop playsinline id="heroVideo" preload="auto" aria-label="Hero motion design showcase">
                 <source src="./assets/mov/hero-video.webm" type="video/webm">
-</video>
             </video>
             
             <div class="scroll-hint-wrapper" id="mainScrollHint">
-                <div class="scroll-text">SCROLL</div>
+                <div class="scroll-text" data-i18n="hero.scroll">SCROLL</div>
                 <div class="scroll-hint-pill"><div class="scroll-dot"></div></div>
             </div>
         </section>
@@ -44,29 +240,23 @@
                 <div class="blob"></div>
                 <div class="blob"></div>
                 <div class="blob"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
             </div>
 
-            <svg style="position: absolute; width: 0; height: 0;">
-                <defs id="svg-defs"></defs>
-            </svg>
-
             <div class="content-wrapper">
-                <h1 id="dynamic-text">Timo Böse engineers visual narratives — grounded in graphic design, elevated by cinematic motion and technical expertise.</h1>
+                <h1 id="dynamic-text" data-i18n="about.headline">Timo Böse engineers visual narratives — grounded in graphic design, elevated by cinematic motion and technical expertise.</h1>
                 
                 <div class="sub-text">
                     <div class="col">
-                        <h4>Focus</h4>
-                        <p>The studio applies the same design rigor to every commission, creating distinct 3D and 2D motion assets that serve the project's core purpose regardless of the industry.</p>
+                        <h4 data-i18n="about.focus_title">Focus</h4>
+                        <p data-i18n="about.focus_text">Every project gets the same obsessive attention. The output: 3D and 2D motion work built around purpose — not filler. From AI-generated video concepts to traditional motion graphics, the work spans commercial campaigns, TV idents, event openers, and experimental R&D.</p>
                     </div>
                     <div class="col">
-                        <h4>Approach</h4>
-                        <p>The output is driven by fundamental design principles: composition, typography, and intent rather than software capabilities alone.</p>
+                        <h4 data-i18n="about.approach_title">Approach</h4>
+                        <p data-i18n="about.approach_text">Composition, typography, intent. The fundamentals drive the work — not the software. Combining classic graphic design principles with cutting-edge AI video tools and 3D animation to create distinctive visual narratives for brands.</p>
                     </div>
                     <div class="col">
-                        <h4>Background</h4>
-                        <p>Grounded in a traditional graphic design education, Timo Böse has spent years refining this craft in a professional context. Based in Berlin.</p>
+                        <h4 data-i18n="about.background_title">Background</h4>
+                        <p data-i18n="about.background_text">Trained in traditional graphic design. Years of professional practice spanning motion design, AI video production, creative direction, and visual design. Clients include Spotify, Google, Porsche, IBM, Adidas, LEGO, and ProSieben. Based in Berlin.</p>
                     </div>
                 </div>
             </div>
@@ -76,74 +266,120 @@
             <div class="grid-wrapper">
                 
                 <div class="grid-row row-1">
-  <div class="project-item" onclick="openProject('project_01')">
-    <div class="project-media">
-      <video loading="lazy" src="./assets/mov/project_01.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project1">
-</video></video>
-    </div>
-    <div class="project-info">
-      <div class="project-title">Showreel</div>
-      <div class="project-meta">work compilation</div>
-    </div>
-  </div>
-                    <div class="project-item" onclick="openProject('museum')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_03.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project3">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">The Last Museum</div><div class="project-meta">AI Video Concept</div></div>
+                    <!-- 1. Showreel -->
+                    <div class="project-item" onclick="openProject('project_01')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_01.webm" muted loop playsinline preload="none" aria-describedby="project1"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.showreel">Showreel</div>
+                            <div class="project-meta" data-i18n="work.showreel_meta">work compilation</div>
+                        </div>
                     </div>
-                    <div class="project-item" onclick="openProject('spotify')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_02.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project2">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Spotify</div><div class="project-meta">Wrapped Visuals</div></div>
+                    <!-- 2. The Last Museum -->
+                    <div class="project-item" onclick="openProject('project_02')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_03.webm" muted loop playsinline preload="none" aria-describedby="project3"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.museum">The Last Museum</div>
+                            <div class="project-meta" data-i18n="work.museum_meta">AI Video Concept</div>
+                        </div>
+                    </div>
+                    <!-- 3. Bilou Wednesday -->
+                    <div class="project-item" onclick="openProject('project_03')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_02.webm" muted loop playsinline preload="none" aria-describedby="bilou-wed"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.bilou_wed">Bilou Wednesday</div>
+                            <div class="project-meta" data-i18n="work.bilou_wed_meta">Campaign Visuals</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="grid-row row-2">
-                    <div class="project-item" onclick="openProject('google')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_04.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project4">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Google IO</div><div class="project-meta">Event Branding</div></div>
+                    <!-- 4. Pro7 -->
+                    <div class="project-item" onclick="openProject('project_04')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_04.webm" muted loop playsinline preload="none" aria-describedby="project4"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.pro7">Pro7</div>
+                            <div class="project-meta" data-i18n="work.pro7_meta">TV Idents</div>
+                        </div>
                     </div>
-                    <div class="project-item" onclick="openProject('porsche')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_05.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project5">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Porsche Taycan</div><div class="project-meta">Cluster UX</div></div>
+                    <!-- 5. Toca Me -->
+                    <div class="project-item" onclick="openProject('project_05')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_05.webm" muted loop playsinline preload="none" aria-describedby="project5"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.toca_me">Toca Me</div>
+                            <div class="project-meta" data-i18n="work.toca_me_meta">Event Opener</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="grid-row row-3">
-                    <div class="project-item" onclick="openProject('ibm')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_06.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project6">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">IBM Watson</div><div class="project-meta">AI Visualization</div></div>
+                    <!-- 6. Bilou Flamingo -->
+                    <div class="project-item" onclick="openProject('project_06')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_06.webm" muted loop playsinline preload="none" aria-describedby="project6"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.bilou_fla">Bilou Flamingo</div>
+                            <div class="project-meta" data-i18n="work.bilou_fla_meta">Product Campaign</div>
+                        </div>
                     </div>
-                    <div class="project-item" onclick="openProject('adidas')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_07.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project7">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Adidas Boost</div><div class="project-meta">Product Reveal</div></div>
+                    <!-- 7. LEGO -->
+                    <div class="project-item" onclick="openProject('project_07')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_07.webm" muted loop playsinline preload="none" aria-describedby="project7"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.lego">LEGO</div>
+                            <div class="project-meta" data-i18n="work.lego_meta">Product Animation</div>
+                        </div>
                     </div>
-                    <div class="project-item" onclick="openProject('lexus')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_08.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project8">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Lexus</div><div class="project-meta">Configurator R&D</div></div>
+                    <!-- 8. Porsche -->
+                    <div class="project-item" onclick="openProject('project_08')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_08.webm" muted loop playsinline preload="none" aria-describedby="project8"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.porsche">Porsche</div>
+                            <div class="project-meta" data-i18n="work.porsche_meta">Genf Autosalon</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="grid-row row-4">
-                    <div class="project-item" onclick="openProject('neural')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_09.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project9">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Neural Net</div><div class="project-meta">R&D System</div></div>
+                    <!-- 9. Neural Net / R&D -->
+                    <div class="project-item" onclick="openProject('project_09')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_09.webm" muted loop playsinline preload="none" aria-describedby="project9"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.neural">Neural Net</div>
+                            <div class="project-meta" data-i18n="work.neural_meta">R&D System</div>
+                        </div>
                     </div>
-                    <div class="project-item" onclick="openProject('liquid')">
-                        <div class="project-media"><video loading="lazy" src="./assets/mov/project_10.webm" muted loop playsinline preload="none" loading="lazy" aria-describedby="project10">
-</video></video></div>
-                        <div class="project-info"><div class="project-title">Liquid Forms</div><div class="project-meta">WebGL Experiment</div></div>
+                    <!-- 10. Liquid Forms -->
+                    <div class="project-item" onclick="openProject('project_10')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_10.webm" muted loop playsinline preload="none" aria-describedby="project10"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.liquid">Liquid Forms</div>
+                            <div class="project-meta" data-i18n="work.liquid_meta">WebGL Experiment</div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
+
 
        <!-- FOOTER (Load external) -->
 <footer id="footer-snap-point" class="footer-container"></footer>
@@ -183,8 +419,8 @@
         </div>
     </div>
 
-    <script src="./js/text.js" defer></script>
-    <script src="./js/script.js" defer></script>
-    <script src="./js/work.js" defer></script>
+    <script src="./js/text.js?v=3"></script>
+    <script src="./js/script.js?v=3"></script>
+    <script src="./js/work.js?v=3" defer></script>
 </body>
 </html>

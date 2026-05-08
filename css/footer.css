@@ -215,10 +215,16 @@
     background: #999;
 }
 
-/* 1. Ab 768px: nur Copyright weg, Rest bleibt wie Desktop */
+/* 1. Ab 768px: nur Copyright weg, Ticker 90% Höhe, Rest bleibt wie Desktop */
 @media (max-width: 768px) {
   .footer-bottom .copyright {
     display: none;
+  }
+  .footer-ticker {
+    height: 32px !important;
+  }
+  .ticker-track img {
+    height: 22px !important;
   }
 }
 

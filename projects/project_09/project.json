@@ -1,0 +1,33 @@
+{
+  "title": "Neural Net",
+  "client": "Personal Project",
+  "role": "Concept & Design",
+  "year": "2022",
+  "agency": "-",
+  "galleryLayout": "grid",
+  "description": [
+    "An R&D exploration into neural network visualization and generative design systems, pushing the boundaries of algorithmic art."
+  ],
+  "credits": [
+    {
+      "role": "Concept & Design",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_09.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_09.webm",
+      "caption": "Neural Net"
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Porsche",
+    "prevHref": "../?id=project_08",
+    "nextLabel": "next project",
+    "nextTitle": "Liquid Forms",
+    "nextHref": "../?id=project_10"
+  }
+}

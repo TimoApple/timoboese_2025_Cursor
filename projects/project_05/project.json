@@ -1,0 +1,84 @@
+{
+  "title": "Toca Me 2013 â€“ Event Opener",
+  "client": "Toca Me",
+  "role": "Director & DoP",
+  "year": "2013",
+  "agency": "Lowerground",
+  "galleryLayout": "horizontal",
+  "description": [
+    "For the TOCA ME 2013 event in Munich, a captivating fusion of classic and modern aesthetics. Traditional camera captured Still Life arrangements brought to life with subtle yet captivating 3D animations."
+  ],
+  "credits": [
+    {
+      "role": "Director",
+      "name": "Timo BÃ¶se"
+    },
+    {
+      "role": "DoP",
+      "name": "Timo BÃ¶se"
+    },
+    {
+      "role": "3D",
+      "name": "Julio Clavijo, Kay Tennemann, Markus Koos"
+    },
+    {
+      "role": "Produced by",
+      "name": "Lowerground"
+    },
+    {
+      "role": "Audio",
+      "name": "David Kamp"
+    }
+  ],
+  "heroVideo": "assets/mov/project_05.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_05.webm",
+      "caption": "Toca Me 2013 â€“ Event Opener"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Pro7",
+    "prevHref": "../?id=project_04",
+    "nextLabel": "next project",
+    "nextTitle": "Bilou Flamingo",
+    "nextHref": "../?id=project_06"
+  }
+}

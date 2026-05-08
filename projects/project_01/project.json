@@ -1,0 +1,123 @@
+{
+  "title": "Timo Böse – Showreel 2023",
+  "client": "Various",
+  "role": "Editing",
+  "year": "2023",
+  "agency": "-",
+  "description": [
+    "A one-minute compilation showcasing a selection of my 3D generated artwork. This collection encompasses client projects, extensive research, and personal explorations from the past years.",
+    "All shots designed and animated by me, except for ProSieben Idents — designed and directed by me, produced by Woodblock for ProSiebenSat.1 TV Deutschland GmbH."
+  ],
+  "credits": [
+    {
+      "role": "Direction & Design",
+      "name": "Timo Böse"
+    },
+    {
+      "role": "Music",
+      "name": "Michael Fakesch"
+    }
+  ],
+  "galleryLayout": "horizontal",
+  "heroVideo": "assets/mov/project_01.webm",
+  "gallery": [
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/08.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/09.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/10.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/11.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/12.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/13.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/14.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/15.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/16.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/17.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/18.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Overview",
+    "prevHref": "../index.html#work",
+    "nextLabel": "next project",
+    "nextTitle": "The Last Museum",
+    "nextHref": "../?id=project_02"
+  }
+}

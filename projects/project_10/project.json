@@ -1,0 +1,33 @@
+{
+  "title": "Liquid Forms",
+  "client": "Personal Project",
+  "role": "Concept & WebGL",
+  "year": "2021",
+  "agency": "-",
+  "galleryLayout": "grid",
+  "description": [
+    "A WebGL experiment exploring fluid dynamics and organic form generation in real-time 3D, blending technical experimentation with visual artistry."
+  ],
+  "credits": [
+    {
+      "role": "Concept & WebGL",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_10.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_10.webm",
+      "caption": "Liquid Forms"
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Neural Net",
+    "prevHref": "../?id=project_09",
+    "nextLabel": "next project",
+    "nextTitle": "Showreel",
+    "nextHref": "../?id=project_01"
+  }
+}

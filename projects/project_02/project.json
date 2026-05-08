@@ -1,0 +1,33 @@
+{
+  "title": "The Last Museum",
+  "client": "Personal Project",
+  "role": "Concept & Production",
+  "year": "2024",
+  "agency": "-",
+  "galleryLayout": "grid",
+  "description": [
+    "An AI-powered video concept exploring the intersection of traditional art curation and artificial intelligence, creating a surreal journey through a museum where exhibits come to life."
+  ],
+  "credits": [
+    {
+      "role": "Concept & Direction",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_03.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_03.webm",
+      "caption": "The Last Museum"
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "Showreel",
+    "prevHref": "../?id=project_01",
+    "nextLabel": "next project",
+    "nextTitle": "Bilou Wednesday",
+    "nextHref": "../?id=project_03"
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timo Böse - Visual Designer</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+
+    <header id="siteHeader" class="site-header">
+        <div class="logo" id="lottieLogoContainer"></div>
+       <nav class="main-nav">
+  <ul>
+    <li><a href="#work" class="nav-work">Work</a></li>
+    <li><a href="#about" class="nav-about">About</a></li>
+    <li><a href="#footer-snap-point" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+    </header>
+
+    <main>
+        
+        <section id="landing">
+            <video autoplay muted loop playsinline id="heroVideo" preload="auto">
+                <source src="assets/mov/hero-video.webm" type="video/webm">
+            </video>
+            
+            <div class="scroll-hint-wrapper" id="mainScrollHint">
+                <div class="scroll-text">SCROLL</div>
+                <div class="scroll-hint-pill"><div class="scroll-dot"></div></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="gradient-bg">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+
+            <svg style="position: absolute; width: 0; height: 0;">
+                <defs id="svg-defs"></defs>
+            </svg>
+
+            <div class="content-wrapper">
+                <h1 id="dynamic-text">Timo Böse engineers visual narratives — grounded in graphic design, elevated by cinematic motion and technical expertise.</h1>
+                
+                <div class="sub-text">
+                    <div class="col">
+                        <h4>Focus</h4>
+                        <p>The studio applies the same design rigor to every commission, creating distinct 3D and 2D motion assets that serve the project's core purpose regardless of the industry.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Approach</h4>
+                        <p>The output is driven by fundamental design principles: composition, typography, and intent rather than software capabilities alone.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Background</h4>
+                        <p>Grounded in a traditional graphic design education, Timo Böse has spent years refining this craft in a professional context. Based in Berlin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <div class="grid-wrapper">
+                
+                <div class="grid-row row-1">
+  <div class="project-item" onclick="openProject('project_01')">
+    <div class="project-media">
+      <video src="assets/mov/project_01.webm" muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="project-info">
+      <div class="project-title">Showreel</div>
+      <div class="project-meta">work compilation</div>
+    </div>
+  </div>
+                    <div class="project-item" onclick="openProject('museum')">
+                        <div class="project-media"><video src="assets/mov/project_03.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">The Last Museum</div><div class="project-meta">AI Video Concept</div></div>
+                    </div>
+                    <div class="project-item" onclick="openProject('spotify')">
+                        <div class="project-media"><video src="assets/mov/project_02.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Spotify</div><div class="project-meta">Wrapped Visuals</div></div>
+                    </div>
+                </div>
+
+                <div class="grid-row row-2">
+                    <div class="project-item" onclick="openProject('google')">
+                        <div class="project-media"><video src="assets/mov/project_04.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Google IO</div><div class="project-meta">Event Branding</div></div>
+                    </div>
+                    <div class="project-item" onclick="openProject('porsche')">
+                        <div class="project-media"><video src="assets/mov/project_05.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Porsche Taycan</div><div class="project-meta">Cluster UX</div></div>
+                    </div>
+                </div>
+
+                <div class="grid-row row-3">
+                    <div class="project-item" onclick="openProject('ibm')">
+                        <div class="project-media"><video src="assets/mov/project_06.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">IBM Watson</div><div class="project-meta">AI Visualization</div></div>
+                    </div>
+                    <div class="project-item" onclick="openProject('adidas')">
+                        <div class="project-media"><video src="assets/mov/project_07.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Adidas Boost</div><div class="project-meta">Product Reveal</div></div>
+                    </div>
+                    <div class="project-item" onclick="openProject('lexus')">
+                        <div class="project-media"><video src="assets/mov/project_08.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Lexus</div><div class="project-meta">Configurator R&D</div></div>
+                    </div>
+                </div>
+
+                <div class="grid-row row-4">
+                    <div class="project-item" onclick="openProject('neural')">
+                        <div class="project-media"><video src="assets/mov/project_09.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Neural Net</div><div class="project-meta">R&D System</div></div>
+                    </div>
+                    <div class="project-item" onclick="openProject('liquid')">
+                        <div class="project-media"><video src="assets/mov/project_10.webm" muted loop playsinline preload="metadata"></video></div>
+                        <div class="project-info"><div class="project-title">Liquid Forms</div><div class="project-meta">WebGL Experiment</div></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+       <!-- FOOTER (Load external) -->
+<footer id="footer-snap-point" class="footer-container"></footer>
+
+<script>
+    // Load footer BEFORE other scripts
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.footer-container').innerHTML = data;
+            console.log('✓ Footer loaded');
+            
+            // NOW bind overlays after footer is loaded
+            if (typeof bindOverlay === 'function') {
+                setTimeout(() => {
+                    bindOverlay('imprintLink', 'imprintOverlay', 'imprint.json');
+                    bindOverlay('privacyLink', 'privacyOverlay', 'privacy.json');
+                }, 100);
+            }
+        })
+        .catch(err => console.error('Footer load error:', err));
+</script>
+
+    </main>
+
+    <div id="imprintOverlay" class="overlay">
+        <div class="overlay-inner">
+            <button class="close-btn" id="imprintClose">✕</button>
+            <div class="overlay-content"></div>
+        </div>
+    </div>
+    
+    <div id="privacyOverlay" class="overlay">
+        <div class="overlay-inner">
+            <button class="close-btn" id="privacyClose">✕</button>
+            <div class="overlay-content"></div>
+        </div>
+    </div>
+
+    <script src="js/text.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/work.js" defer></script>
+</body>
+</html>

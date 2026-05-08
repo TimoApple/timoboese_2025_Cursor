@@ -1,0 +1,47 @@
+{
+  "title": "Bilou Wednesday",
+  "client": "Bilou / Philosophy Brands",
+  "role": "3D Lead & Motion",
+  "year": "2024",
+  "agency": "Direct",
+  "galleryLayout": "horizontal",
+  "description": [
+    "Campaign visuals for Bilou's Wednesday product line â€” capturing the brand's fun, light, and cheerful style through playful 3D animations designed for social media channels and online presentations."
+  ],
+  "credits": [
+    {
+      "role": "Client",
+      "name": "Philosophy Brands"
+    },
+    {
+      "role": "3D & Motion",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_02.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_02.webm",
+      "caption": "Bilou Wednesday"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "The Last Museum",
+    "prevHref": "../?id=project_02",
+    "nextLabel": "next project",
+    "nextTitle": "Pro7 TV Idents",
+    "nextHref": "../?id=project_04"
+  }
+}

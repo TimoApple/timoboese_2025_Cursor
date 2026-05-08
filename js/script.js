@@ -95,10 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // 2. START BLUR EFFECT
-  if (typeof window.initLiquidText === "function") {
-    window.initLiquidText();
+  // 2. START BLUR EFFECT – warte auf i18n (defer) falls vorhanden
+  function startLiquidText() {
+    if (typeof window.initLiquidText === "function") {
+      window.initLiquidText();
+    }
   }
+  // Versuche sofort
+  setTimeout(startLiquidText, 100);
+  // Und nochmal wenn i18n fertig ist
+  document.addEventListener('languageChanged', startLiquidText, { once: true });
 
   // 3. FADE-IN OBSERVER
   const observer = new IntersectionObserver(
@@ -172,18 +178,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   initLottieLogo();
 
-  // 6. FOOTER OVERLAYS - FIXED
-  setTimeout(() => {
-    bindOverlay("imprintLink", "imprintOverlay", "imprint.json");
-    bindOverlay("privacyLink", "privacyOverlay", "privacy.json");
-  }, 500);
+  // 6. FOOTER OVERLAYS — bound by inline script after footer loads
 });
 
-// PROJECT NAV – pro7 (Mercedes) → project.html?id=project_01, Rest → project.html?id=…
+// PROJECT NAV
 function openProject(projectId) {
   const transition = document.querySelector('.page-transition');
-  const id = projectId === 'pro7' ? 'project_01' : projectId;
-  const url = 'project.html?id=' + encodeURIComponent(id);
+  const url = '/project/?id=' + encodeURIComponent(projectId);
   if (transition) {
     transition.classList.add('active');
     setTimeout(function () { window.location.href = url; }, 300);

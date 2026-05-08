@@ -1,0 +1,77 @@
+{
+  "title": "Porsche â€“ Genf Autosalon",
+  "client": "Porsche AG",
+  "role": "Concept & Design",
+  "year": "2017",
+  "agency": "Acht Frankfurt",
+  "galleryLayout": "horizontal",
+  "description": [
+    "Conceptualized and designed abstract stage concepts, intro teasers, and presentation assets for the Porsche AG Stage at Autosalon Genf.",
+    "Drawing inspiration from concrete circuits through the integration of abstract architectural elements."
+  ],
+  "credits": [
+    {
+      "role": "Client",
+      "name": "Porsche AG"
+    },
+    {
+      "role": "Agency",
+      "name": "Acht Frankfurt"
+    },
+    {
+      "role": "Concept & Design",
+      "name": "Timo BÃ¶se"
+    }
+  ],
+  "heroVideo": "assets/mov/project_08.webm",
+  "gallery": [
+    {
+      "type": "video",
+      "src": "assets/mov/project_08.webm",
+      "caption": "Porsche â€“ Genf Autosalon"
+    },
+    {
+      "type": "image",
+      "src": "assets/img/01.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/02.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/03.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/04.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/05.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/06.webp",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "assets/img/07.webp",
+      "caption": ""
+    }
+  ],
+  "nav": {
+    "prevLabel": "back",
+    "prevTitle": "LEGO",
+    "prevHref": "../?id=project_07",
+    "nextLabel": "next project",
+    "nextTitle": "Neural Net",
+    "nextHref": "../?id=project_09"
+  }
+}

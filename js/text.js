@@ -1,73 +1,46 @@
-/* js/text.js */
-
+/* js/text.js – Liquid Text Effect mit CSS blur() statt SVG-Filtern */
 
 window.initLiquidText = function() {
     const textEl = document.getElementById('dynamic-text');
-    const svgDefs = document.getElementById('svg-defs');
-    
-    if (!textEl || !svgDefs) return;
-
+    if (!textEl) return;
 
     const textContent = textEl.textContent.trim();
     textEl.innerHTML = '';
     const charElements = [];
     const words = textContent.split(' ');
 
-
     words.forEach((word, wIndex) => {
         const wordSpan = document.createElement('span');
         wordSpan.style.display = 'inline-block';
         wordSpan.style.whiteSpace = 'pre';
 
-
         word.split('').forEach((char, cIndex) => {
             const span = document.createElement('span');
             span.className = 'char';
             span.textContent = char;
+            span.style.display = 'inline-block';
+            span.style.position = 'relative';
+            span.style.willChange = 'transform, filter';
             wordSpan.appendChild(span);
-
-
-            const index = wIndex * 100 + cIndex;
-            const filterId = `blur-${index}`;
-
-
-            const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
-            filter.setAttribute('id', filterId);
-            filter.setAttribute('color-interpolation-filters', 'linearRGB');
-            filter.setAttribute('x', '-50%');
-            filter.setAttribute('y', '-50%');
-            filter.setAttribute('width', '200%');
-            filter.setAttribute('height', '200%');
-            filter.innerHTML = `<feGaussianBlur in="SourceGraphic" stdDeviation="0"/>`;
-            svgDefs.appendChild(filter);
-
 
             charElements.push({
                 el: span,
-                filter: filter.querySelector('feGaussianBlur'),
                 targetBlur: 0, currentBlur: 0,
                 targetX: 0, currentX: 0,
                 targetY: 0, currentY: 0,
                 targetScale: 1, currentScale: 1
             });
-
-
-            span.style.filter = `url(#${filterId})`;
         });
-
 
         textEl.appendChild(wordSpan);
         textEl.appendChild(document.createTextNode(' '));
     });
 
-
     let mouseX = 0, mouseY = 0;
-
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-
 
         charElements.forEach(char => {
             const rect = char.el.getBoundingClientRect();
@@ -78,15 +51,14 @@ window.initLiquidText = function() {
             const distance = Math.sqrt(dx * dx + dy * dy);
             const maxDistance = 220;
 
-
             if (distance < maxDistance) {
                 const influence = Math.pow(1 - (distance / maxDistance), 4);
-                char.targetBlur = influence * 8;
-                const pushStrength = influence * 25;
+                char.targetBlur = influence * 4;
+                const pushStrength = influence * 12;
                 const angle = Math.atan2(dy, dx);
                 char.targetX = -Math.cos(angle) * pushStrength;
                 char.targetY = -Math.sin(angle) * pushStrength;
-                char.targetScale = 1 + (influence * 0.1);
+                char.targetScale = 1 + (influence * 0.05);
             } else {
                 char.targetBlur = 0;
                 char.targetX = 0;
@@ -96,37 +68,46 @@ window.initLiquidText = function() {
         });
     });
 
+    // Reset effect when mouse leaves the about section
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        aboutSection.addEventListener('mouseleave', () => {
+            charElements.forEach(char => {
+                char.targetBlur = 0;
+                char.targetX = 0;
+                char.targetY = 0;
+                char.targetScale = 1;
+            });
+        });
+    }
 
     function animateLoop() {
         charElements.forEach(char => {
-            char.currentBlur += (char.targetBlur - char.currentBlur) * 0.18;
-            char.currentX += (char.targetX - char.currentX) * 0.18;
-            char.currentY += (char.targetY - char.currentY) * 0.18;
-            char.currentScale += (char.targetScale - char.currentScale) * 0.18;
+            char.currentBlur += (char.targetBlur - char.currentBlur) * 0.12;
+            char.currentX += (char.targetX - char.currentX) * 0.12;
+            char.currentY += (char.targetY - char.currentY) * 0.12;
+            char.currentScale += (char.targetScale - char.currentScale) * 0.12;
 
-
+            let transform = `translate(${char.currentX}px, ${char.currentY}px) scale(${char.currentScale})`;
+            
             if (Math.abs(char.currentBlur) > 0.05) {
-                char.filter.setAttribute('stdDeviation', char.currentBlur);
+                char.el.style.filter = `blur(${char.currentBlur}px)`;
             } else {
-                char.filter.setAttribute('stdDeviation', '0');
+                char.el.style.filter = 'none';
             }
-
-
-            char.el.style.transform = `translate(${char.currentX}px, ${char.currentY}px) scale(${char.currentScale})`;
+            
+            char.el.style.transform = transform;
         });
         requestAnimationFrame(animateLoop);
     }
 
-
     animateLoop();
-
 
     setTimeout(() => {
         charElements.forEach((c, i) => {
             setTimeout(() => c.el.classList.add('visible'), i * 30);
         });
     }, 100);
-
 
     const textObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -137,10 +118,8 @@ window.initLiquidText = function() {
         });
     }, { threshold: [0, 0.5, 1] });
 
-
     textObserver.observe(textEl);
 };
-
 
 function triggerColumnAnimation() {
     const columns = document.querySelectorAll('.sub-text .col');
@@ -160,7 +139,6 @@ function triggerColumnAnimation() {
         });
     });
 }
-
 
 window.addEventListener('load', () => {
     const gradientBg = document.querySelector('.gradient-bg');
@@ -182,8 +160,6 @@ window.addEventListener('scroll', () => {
     const workRect = workSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     
-    // Start fading when work section enters bottom half of screen
-    // Fully faded when work section reaches 30% from top
     if (workRect.top < windowHeight * 0.7) {
         const fadeStart = windowHeight * 0.7;
         const fadeEnd = windowHeight * 0.3;
