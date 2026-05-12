@@ -9,7 +9,19 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Bilder/Video vor Rechtsklick schützen */
+img, video {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  pointer-events: auto;
+}
+
 /* ═══════ SCROLL ENGINE ═══════
+
    Desktop: Snap-Scrolling aktiv
    Mobile (<768px): Snap deaktiviert → freies Scrollen */
 html {

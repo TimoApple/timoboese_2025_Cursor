@@ -3,7 +3,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("SCRIPT READY");
 
+  // 0a. IMAGE PROTECTION – Rechtsklick + Drag auf Bilder verhindern
+  document.querySelectorAll('img, video').forEach((el) => {
+    el.setAttribute('draggable', 'false');
+    el.addEventListener('contextmenu', (e) => e.preventDefault());
+  });
+
   // 0. EMAIL PROTECTION – minimal & robust
+
   document.querySelectorAll(".email-protect").forEach((el) => {
     const u = el.dataset.user;
     const d = el.dataset.domain;
