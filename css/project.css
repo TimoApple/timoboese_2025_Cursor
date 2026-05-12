@@ -164,10 +164,11 @@ body {
     opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out);
 }
 .info-text p a {
-    color: #333;
+    color: inherit;
     text-decoration: underline;
     font-weight: 400;
 }
+
 .info-text p a:hover {
     color: var(--c-accent);
 }

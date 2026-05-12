@@ -718,11 +718,18 @@
       if (credits) credits.classList.add('visible');
     }, 300);
 
+    // Bilderschutz: Rechtsklick + Drag auf img/video verhindern
+    document.querySelectorAll('img, video').forEach(function(el) {
+      el.setAttribute('draggable', 'false');
+      el.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    });
+
     console.log('✅ Project page initialized');
   };
 
 })();
 </script>
+
 
 </body>
 </html>
