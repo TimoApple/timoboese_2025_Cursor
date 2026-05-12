@@ -1,63 +1,47 @@
 {
-  "title": "LEGO â€“ Brick Aviation",
-  "client": "Personal Project",
-  "role": "Concept & Animation",
-  "year": "2017",
-  "agency": "-",
+  "title": "Bilou Wednesday",
+  "client": "nuwena GmbH (bilou)",
+  "role": "3D Lead & Motion",
+  "year": "2023",
+  "agency": "Direct",
   "galleryLayout": "horizontal",
-  "description": [
-    "A nostalgic journey merging two childhood passions: flying and Lego. Coming from a Lufthansa family, the fascination with aviation naturally developed at a young age."
+  "description_en": [
+    "A limited edition collaboration between bilou and Netflix's Wednesday — one of the most successful licensing plays of 2023. For the launch, I created 3D product renders, teaser visuals, and social content that translated the show's signature aesthetic into bilou's world.",
+    "The brief was essentially a contradiction: take a brand built on pastel, sparkle, and relentless cheerfulness — and turn it dark. Two hero products, two distinct moods — Black Is My Happy Colour and Nightshades & Ravens — rendered in the gothic visual language of the Wednesday universe, without losing what makes bilou recognisable to its audience. Light and bright, swallowed by shadow."
+  ],
+  "description_de": [
+    "Eine Limited-Edition-Kollaboration zwischen bilou und Netflix's Wednesday — eine der meistbeachteten Lizenzkooperationen des Jahres 2023. Für den Launch produzierte ich 3D-Produktrenderings, Teaser-Visuals und Social-Content, der die Bildsprache der Serie in die Welt von bilou übersetzte.",
+    "Das Briefing war im Kern ein Widerspruch: eine Marke, die auf Pastelltönen, Glitzer und unerschütterlicher Fröhlichkeit aufgebaut ist — und sie ins Dunkle ziehen. Zwei Hero-Produkte, zwei Stimmungen — Black Is My Happy Colour und Nightshades & Ravens — in der gotischen Bildsprache des Wednesday-Universums, ohne dass bilou sich selbst verliert. Hell und verspielt, verschluckt vom Schatten."
   ],
   "credits": [
     {
-      "role": "Concept & Animation",
-      "name": "Timo BÃ¶se"
+      "role": "Client",
+      "name": "nuwena GmbH (bilou)"
+    },
+    {
+      "role": "License",
+      "name": "Amazon MGM Studios / Netflix"
+    },
+    {
+      "role": "3D & Motion",
+      "name": "Timo Böse"
     }
   ],
   "heroVideo": "assets/mov/project_07.webm",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_07.webm",
-      "caption": "LEGO â€“ Brick Aviation"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Bilou Flamingo",
+    "prevTitle": "Bilou 2023",
     "prevHref": "../project/?id=project_06",
     "nextLabel": "next project",
-    "nextTitle": "Porsche",
+    "nextTitle": "Âme",
     "nextHref": "../project/?id=project_08"
   }
 }

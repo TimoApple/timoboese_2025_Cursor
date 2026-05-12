@@ -1,47 +1,59 @@
 {
-  "title": "Bilou Wednesday",
-  "client": "Bilou / Philosophy Brands",
-  "role": "3D Lead & Motion",
-  "year": "2024",
-  "agency": "Direct",
+  "title": "Pro7 TV Idents",
+  "client": "ProSiebenSat.1 TV Deutschland GmbH",
+  "role": "Direction & Design",
+  "year": "2015",
+  "agency": "Woodblock",
   "galleryLayout": "horizontal",
-  "description": [
-    "Campaign visuals for Bilou's Wednesday product line â€” capturing the brand's fun, light, and cheerful style through playful 3D animations designed for social media channels and online presentations."
+  "description_en": [
+    "Three broadcast idents for ProSieben — each built around a distinct colour spectrum, each representing a different programming category. Designed and directed by me, produced in collaboration with Woodblock.",
+    "The result is a modular visual system that works across the full breadth of the channel's output — precise, high-energy, and built for broadcast scale."
+  ],
+  "description_de": [
+    "Drei Broadcast-Idents für ProSieben — jeder um ein eigenes Farbspektrum aufgebaut, jeder für eine andere Programmkategorie. Von mir designed und directed, produziert in Zusammenarbeit mit Woodblock.",
+    "Das Ergebnis ist ein modulares visuelles System, das die gesamte Bandbreite des Senders abdeckt — präzise, energiegeladen und für Broadcast-Maßstäbe konzipiert."
   ],
   "credits": [
     {
       "role": "Client",
-      "name": "Philosophy Brands"
+      "name": "ProSiebenSat.1 TV Deutschland GmbH"
     },
     {
-      "role": "3D & Motion",
-      "name": "Timo BÃ¶se"
+      "role": "Account Executive ProSieben / ProSieben MAXX",
+      "name": "Anne-Jacqueline Wenisch"
+    },
+    {
+      "role": "Art Director OnAir Design",
+      "name": "Markus Goles"
+    },
+    {
+      "role": "Direction & Design",
+      "name": "Timo Böse"
+    },
+    {
+      "role": "Production",
+      "name": "Woodblock · Producer: Matthias Winter"
+    },
+    {
+      "role": "Artists",
+      "name": "Sebastian Faber, Fabian Pross, Markus Eschrich, Niclas Schlapmann, Ivan Vasiljevic, Dirk Mauche"
+    },
+    {
+      "role": "Music & Sound Design",
+      "name": "Michael Fakesch"
     }
   ],
   "heroVideo": "assets/mov/project_03.webm",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_03.webm",
-      "caption": "Bilou Wednesday"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" }
   ],
   "nav": {
     "prevLabel": "back",
     "prevTitle": "The Last Museum",
     "prevHref": "../project/?id=project_02",
     "nextLabel": "next project",
-    "nextTitle": "Pro7 TV Idents",
+    "nextTitle": "Toca Me",
     "nextHref": "../project/?id=project_04"
   }
 }

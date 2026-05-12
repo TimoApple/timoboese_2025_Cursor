@@ -1,16 +1,23 @@
 {
-  "title": "Timo Böse – Showreel 2023",
+  "title": "Showreel",
   "client": "Various",
-  "role": "Editing",
+  "role": "Direction, Design & Animation",
   "year": "2023",
   "agency": "-",
-  "description": [
-    "A one-minute compilation showcasing a selection of my 3D generated artwork. This collection encompasses client projects, extensive research, and personal explorations from the past years.",
-    "All shots designed and animated by me, except for ProSieben Idents — designed and directed by me, produced by Woodblock for ProSiebenSat.1 TV Deutschland GmbH."
+  "galleryLayout": "horizontal",
+  "description_en": [
+    "A selection of visual work from the past years — client projects, research, and personal exploration. One minute.",
+    "All shots designed and animated by me. ProSieben Idents — designed and directed by me, produced by Woodblock for ProSiebenSat.1 TV Deutschland GmbH. <a href=\"../project/?id=project_03\">Full credits here</a>.",
+    "Audio: Michael Fakesch – Designing Sounds"
+  ],
+  "description_de": [
+    "Eine Auswahl visueller Arbeiten der vergangenen Jahre — Kundenprojekte, Research und persönliche Experimente. Eine Minute.",
+    "Alle Shots designed und animiert von mir. ProSieben Idents — designed und directed von mir, produziert von Woodblock für ProSiebenSat.1 TV Deutschland GmbH. <a href=\"../project/?id=project_03\">Vollständige Credits hier</a>.",
+    "Audio: Michael Fakesch – Designing Sounds"
   ],
   "credits": [
     {
-      "role": "Direction & Design",
+      "role": "Direction, Design & Animation",
       "name": "Timo Böse"
     },
     {
@@ -18,104 +25,31 @@
       "name": "Michael Fakesch"
     }
   ],
-  "galleryLayout": "horizontal",
   "heroVideo": "assets/mov/project_01.webm",
   "gallery": [
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/08.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/09.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/10.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/11.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/12.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/13.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/14.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/15.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/16.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/17.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/18.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" },
+    { "src": "assets/img/07.webp" },
+    { "src": "assets/img/08.webp" },
+    { "src": "assets/img/09.webp" },
+    { "src": "assets/img/10.webp" },
+    { "src": "assets/img/11.webp" },
+    { "src": "assets/img/12.webp" },
+    { "src": "assets/img/13.webp" },
+    { "src": "assets/img/14.webp" },
+    { "src": "assets/img/15.webp" },
+    { "src": "assets/img/16.webp" },
+    { "src": "assets/img/17.webp" },
+    { "src": "assets/img/18.webp" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Overview",
-    "prevHref": "../index.html#work",
+    "prevTitle": "Aviation",
+    "prevHref": "../project/?id=project_10",
     "nextLabel": "next project",
     "nextTitle": "The Last Museum",
     "nextHref": "../project/?id=project_02"

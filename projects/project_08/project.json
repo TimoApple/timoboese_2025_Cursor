@@ -1,77 +1,50 @@
 {
-  "title": "Porsche â€“ Genf Autosalon",
-  "client": "Porsche AG",
-  "role": "Concept & Design",
-  "year": "2017",
-  "agency": "Acht Frankfurt",
+  "title": "Âme",
+  "client": "Innervisions",
+  "role": "Art Direction & Animation",
+  "year": "2018",
+  "agency": "-",
   "galleryLayout": "horizontal",
-  "description": [
-    "Conceptualized and designed abstract stage concepts, intro teasers, and presentation assets for the Porsche AG Stage at Autosalon Genf.",
-    "Drawing inspiration from concrete circuits through the integration of abstract architectural elements."
+  "description_en": [
+    "Âme's debut album Dream House — released on Innervisions in 2018 — takes its name from the legendary sound and light installation by La Monte Young and Marian Zazeela. That reference set the visual direction: a world of shifting light, spatial depth, and deliberate stillness.",
+    "Working closely with Florian Auer, I developed the album artwork and an extended visual universe around it — animated loops for the Innervisions YouTube channel, a music video for Queen of Toys, and live visual footage used during their performances, including at the Royal Albert Hall in London.",
+    "Âme Live at Innervisions London, Royal Albert Hall — footage courtesy of Telekom Electronic Beats TV."
+  ],
+  "description_de": [
+    "Âmes Debütalbum Dream House — 2018 auf Innervisions erschienen — bezieht seinen Namen aus der legendären Klang- und Lichtinstallation von La Monte Young und Marian Zazeela. Diese Referenz bestimmte die visuelle Richtung: eine Welt aus wechselndem Licht, räumlicher Tiefe und bewusster Stille.",
+    "In enger Zusammenarbeit mit Florian Auer entwickelte ich das Album-Artwork sowie ein erweitertes visuelles Universum dazu — animierte Loops für den Innervisions YouTube-Kanal, ein Musikvideo für Queen of Toys und Live-Visual-Material, das bei ihren Performances zum Einsatz kam, darunter in der Royal Albert Hall in London.",
+    "Âme Live at Innervisions London, Royal Albert Hall — Material courtesy of Telekom Electronic Beats TV."
   ],
   "credits": [
     {
       "role": "Client",
-      "name": "Porsche AG"
+      "name": "Innervisions"
     },
     {
-      "role": "Agency",
-      "name": "Acht Frankfurt"
+      "role": "Art Direction & Animation",
+      "name": "Timo Böse"
     },
     {
-      "role": "Concept & Design",
-      "name": "Timo BÃ¶se"
+      "role": "Creative Direction",
+      "name": "Florian Auer"
     }
   ],
-  "heroVideo": "assets/mov/project_08.webm",
+  "heroVideo": "https://www.youtube.com/watch?v=EXAMPLE",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_08.webm",
-      "caption": "Porsche â€“ Genf Autosalon"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" },
+    { "src": "assets/img/07.webp" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "LEGO",
+    "prevTitle": "Bilou Wednesday",
     "prevHref": "../project/?id=project_07",
     "nextLabel": "next project",
-    "nextTitle": "Neural Net",
+    "nextTitle": "Lufthansa Digital Hangar",
     "nextHref": "../project/?id=project_09"
   }
 }

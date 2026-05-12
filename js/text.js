@@ -49,17 +49,25 @@ window.initLiquidText = function() {
             const dx = mouseX - charCenterX;
             const dy = mouseY - charCenterY;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            const maxDistance = 220;
+            // Desktop: größerer Wirkungsradius (350px), mehr Blur, weicher auslaufend
+            const isDesktop = window.innerWidth > 768;
+            const maxDistance = isDesktop ? 600 : 220;
+
+
 
             if (distance < maxDistance) {
                 const influence = Math.pow(1 - (distance / maxDistance), 4);
-                char.targetBlur = influence * 4;
-                const pushStrength = influence * 12;
+                char.targetBlur = influence * 8;
+                const pushStrength = influence * 30;
+
+
+
                 const angle = Math.atan2(dy, dx);
                 char.targetX = -Math.cos(angle) * pushStrength;
                 char.targetY = -Math.sin(angle) * pushStrength;
                 char.targetScale = 1 + (influence * 0.05);
             } else {
+
                 char.targetBlur = 0;
                 char.targetX = 0;
                 char.targetY = 0;

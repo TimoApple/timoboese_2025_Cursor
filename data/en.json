@@ -14,7 +14,7 @@
     "scroll": "SCROLL"
   },
   "about": {
-    "headline": "Motion that earns attention. Design that holds it.\nBerlin-based director and motion designer — for brands, products, and digital communication. Every project starts with a concept. Ends with content that does its job.",
+    "headline": "Motion that earns attention. Design that holds it. Berlin-based director and motion designer — for brands, products, and digital communication. Every project starts with a concept. Ends with content that does its job.",
     "focus_title": "FOCUS",
     "focus_text": "Every project starts with a clear visual question: what should this communicate, and to whom? The answer shapes everything — format, style, length, and delivery. No default solutions.",
     "approach_title": "APPROACH",
@@ -27,23 +27,24 @@
     "showreel_meta": "work compilation",
     "museum": "The Last Museum",
     "museum_meta": "AI Video Concept",
-    "bilou_wed": "Bilou Wednesday",
-    "bilou_wed_meta": "Campaign Visuals",
-    "pro7": "Pro7",
-    "pro7_meta": "TV Idents",
+    "pro7": "Pro7 TV Idents",
+    "pro7_meta": "Broadcast Design",
     "toca_me": "Toca Me",
     "toca_me_meta": "Event Opener",
-    "bilou_fla": "Bilou Flamingo",
-    "bilou_fla_meta": "Product Campaign",
-    "lego": "LEGO",
-    "lego_meta": "Product Animation",
-    "porsche": "Porsche",
-    "porsche_meta": "Genf Autosalon",
-    "neural": "Neural Net",
-    "neural_meta": "R&D System",
-    "liquid": "Liquid Forms",
-    "liquid_meta": "WebGL Experiment"
+    "nike_kobe": "Nike Kobe 8",
+    "nike_kobe_meta": "Key Visual",
+    "bilou_2023": "Bilou 2023",
+    "bilou_2023_meta": "Campaign Visuals",
+    "bilou_wed": "Bilou Wednesday",
+    "bilou_wed_meta": "Limited Edition",
+    "ame": "Âme",
+    "ame_meta": "Album Artwork & Visuals",
+    "lufthansa": "Lufthansa Digital Hangar",
+    "lufthansa_meta": "Confidential",
+    "aviation": "Aviation",
+    "aviation_meta": "3D Animation"
   },
+
   "whatido": {
     "label": "WHAT I DO",
     "headline": "Three things, done well.",
@@ -68,6 +69,11 @@
     "copyright": "© TIMO BÖSE 2025",
     "imprint": "IMPRINT",
     "privacy": "PRIVACY"
+  },
+  "cookie": {
+    "text": "This website uses cookies to improve your experience. By using this site, you agree to the use of cookies.",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "language": {
     "de": "DE",

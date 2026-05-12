@@ -27,23 +27,24 @@
     "showreel_meta": "Arbeitsproben",
     "museum": "The Last Museum",
     "museum_meta": "KI-Video Konzept",
-    "bilou_wed": "Bilou Wednesday",
-    "bilou_wed_meta": "Kampagnen-Visuals",
-    "pro7": "Pro7",
-    "pro7_meta": "TV-Idents",
+    "pro7": "Pro7 TV Idents",
+    "pro7_meta": "Broadcast-Design",
     "toca_me": "Toca Me",
     "toca_me_meta": "Event-Opener",
-    "bilou_fla": "Bilou Flamingo",
-    "bilou_fla_meta": "Produktkampagne",
-    "lego": "LEGO",
-    "lego_meta": "Produktanimation",
-    "porsche": "Porsche",
-    "porsche_meta": "Genf Autosalon",
-    "neural": "Neural Net",
-    "neural_meta": "F&E System",
-    "liquid": "Liquid Forms",
-    "liquid_meta": "WebGL Experiment"
+    "nike_kobe": "Nike Kobe 8",
+    "nike_kobe_meta": "Key Visual",
+    "bilou_2023": "Bilou 2023",
+    "bilou_2023_meta": "Kampagnen-Visuals",
+    "bilou_wed": "Bilou Wednesday",
+    "bilou_wed_meta": "Limited Edition",
+    "ame": "Âme",
+    "ame_meta": "Album Artwork & Visuals",
+    "lufthansa": "Lufthansa Digital Hangar",
+    "lufthansa_meta": "Vertraulich",
+    "aviation": "Aviation",
+    "aviation_meta": "3D Animation"
   },
+
   "whatido": {
     "label": "WAS ICH MACHE",
     "headline": "Drei Dinge, gut gemacht.",
@@ -68,6 +69,11 @@
     "copyright": "© TIMO BÖSE 2025",
     "imprint": "IMPRESSUM",
     "privacy": "DATENSCHUTZ"
+  },
+  "cookie": {
+    "text": "Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern. Mit der Nutzung stimmst du der Verwendung von Cookies zu.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
   },
   "language": {
     "de": "DE",

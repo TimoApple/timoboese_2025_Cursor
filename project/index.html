@@ -13,6 +13,114 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="../assets/favicon/site.webmanifest">
+  <style>
+    /* Password Overlay */
+    .password-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(8px);
+    }
+    .password-box {
+      background: #111;
+      border: 1px solid #333;
+      padding: 3rem;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+    }
+    .password-box h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: #fff;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 0.05em;
+    }
+    .password-box p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #888;
+      margin: 0 0 1.5rem 0;
+    }
+    .password-box input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .password-box input:focus {
+      border-color: #666;
+    }
+    .password-box .error-msg {
+      color: #ff4444;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      min-height: 1.2rem;
+    }
+    .password-box button {
+      margin-top: 1rem;
+      padding: 0.7rem 2rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .password-box button:hover {
+      opacity: 0.8;
+    }
+    .password-box .btn-back {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #666;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .password-box .btn-back:hover {
+      color: #fff;
+    }
+    /* YouTube embed */
+    .hero-youtube {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .hero-youtube iframe {
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+    }
+    /* Description links */
+    .info-text p a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #555;
+      transition: text-decoration-color 0.2s;
+    }
+    .info-text p a:hover {
+      text-decoration-color: #fff;
+    }
+  </style>
 </head>
 <body>
   <svg style="width:0;height:0;position:absolute;">
@@ -36,6 +144,7 @@
 <script>
 /**
  * project-loader.js – inline, kein Cache-Problem
+ * v2 – Unterstützt description_en/description_de, YouTube Hero, Links in Texten, Passwort-Schutz
  */
 (function () {
   function getProjectId() {
@@ -64,30 +173,81 @@
     return "video/mp4";
   }
 
+  function isYouTubeUrl(url) {
+    return url && (url.indexOf("youtube.com") !== -1 || url.indexOf("youtu.be") !== -1);
+  }
+
+  function getYouTubeEmbedUrl(url) {
+    var videoId = "";
+    var match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+    if (match) videoId = match[1];
+    if (!videoId) return "";
+    return "https://www.youtube.com/embed/" + videoId + "?autoplay=1&mute=1&loop=1&playlist=" + videoId + "&controls=0&showinfo=0&rel=0&modestbranding=1";
+  }
+
   function escapeHtml(text) {
     const div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
   }
 
-  function buildPage(data, basePath) {
-    const heroSrc = resolveUrl(basePath, data.heroVideo || "");
-    const heroType = videoType(heroSrc);
+  // Aktuelle Sprache ermitteln
+  function getCurrentLang() {
+    if (window.i18n && typeof window.i18n.getLang === 'function') {
+      return window.i18n.getLang();
+    }
+    return 'en';
+  }
 
-    let metaHtml = `
-      <div class="meta-block"><strong>Client</strong> ${escapeHtml(data.client || "")}</div>
-      <div class="meta-block"><strong>Role</strong> ${escapeHtml(data.role || "")}</div>
-      <div class="meta-block"><strong>Year</strong> ${escapeHtml(data.year || "")}</div>
-      <div class="meta-block"><strong>Agency</strong> ${escapeHtml(data.agency || "")}</div>`;
-
-    let descriptionHtml = "";
+  // Beschreibung je nach Sprache auswählen
+  function getDescription(data) {
+    var lang = getCurrentLang();
+    if (lang === 'de' && Array.isArray(data.description_de)) {
+      return data.description_de;
+    }
+    if (Array.isArray(data.description_en)) {
+      return data.description_en;
+    }
+    // Fallback: alte description (EN)
     if (Array.isArray(data.description)) {
-      data.description.forEach(function (p) {
-        descriptionHtml += '<p class="anim-text">' + escapeHtml(p) + "</p>";
+      return data.description;
+    }
+    return [];
+  }
+
+  function buildPage(data, basePath) {
+    // Prüfen ob passwortgeschützt
+    if (data.passwordProtected) {
+      return buildPasswordPage(data, basePath);
+    }
+
+    var heroSrc = resolveUrl(basePath, data.heroVideo || "");
+    var isYouTube = isYouTubeUrl(heroSrc);
+    var heroType = videoType(heroSrc);
+
+    var metaHtml = "";
+    if (data.client && data.client !== "Confidential") {
+      metaHtml += '<div class="meta-block"><strong>Client</strong> ' + escapeHtml(data.client || "") + '</div>';
+    }
+    metaHtml += '<div class="meta-block"><strong>Role</strong> ' + escapeHtml(data.role || "") + '</div>';
+    if (data.year && data.year !== "-") {
+      metaHtml += '<div class="meta-block"><strong>Year</strong> ' + escapeHtml(data.year || "") + '</div>';
+    }
+    if (data.agency && data.agency !== "-") {
+      metaHtml += '<div class="meta-block"><strong>Agency</strong> ' + escapeHtml(data.agency || "") + '</div>';
+    }
+
+    // Beschreibung mit Sprachunterstützung
+    var description = getDescription(data);
+    var descriptionHtml = "";
+    if (description.length > 0) {
+      description.forEach(function (p) {
+        // Erlaubt HTML (für Links), aber escaped sicher
+        descriptionHtml += '<p class="anim-text">' + p + "</p>";
       });
     }
 
-    let creditsHtml = "";
+    var creditsHtml = "";
     if (Array.isArray(data.credits) && data.credits.length > 0) {
       creditsHtml = '<div class="credits-list anim-text">';
       data.credits.forEach(function (c) {
@@ -101,22 +261,33 @@
       creditsHtml += "</div>";
     }
 
-    const galleryLayout = data.galleryLayout || "horizontal";
+    var galleryLayout = data.galleryLayout || "horizontal";
 
-    let galleryHtml = "";
-    let gallerySectionClass = "horizontal-scroll-container";
+    var galleryHtml = "";
+    var gallerySectionClass = "horizontal-scroll-container";
     if (Array.isArray(data.gallery)) {
       if (galleryLayout === "grid") {
         gallerySectionClass = "grid-scroll-container";
         galleryHtml = '<div class="grid-gallery">';
         data.gallery.forEach(function (item) {
-          const src = resolveUrl(basePath, item.src);
-          const caption = escapeHtml(item.caption || "");
-          if (item.type === "video") {
-            galleryHtml +=
-              '<div class="grid-item">' +
-              '<video autoplay muted loop playsinline src="' + src + '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)"></video>' +
-              '<div class="asset-caption">' + caption + "</div></div>";
+          var src = resolveUrl(basePath, item.src);
+          var caption = escapeHtml(item.caption || "");
+          var itemIsYouTube = isYouTubeUrl(src);
+          if (item.type === "video" || itemIsYouTube) {
+            if (itemIsYouTube) {
+              var embedUrl = getYouTubeEmbedUrl(src);
+              galleryHtml +=
+                '<div class="grid-item grid-item-youtube">' +
+                '<div class="youtube-embed-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000">' +
+                '<iframe src="' + embedUrl + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>' +
+                '</div>' +
+                '<div class="asset-caption">' + caption + "</div></div>";
+            } else {
+              galleryHtml +=
+                '<div class="grid-item">' +
+                '<video autoplay muted loop playsinline src="' + src + '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)"></video>' +
+                '<div class="asset-caption">' + caption + "</div></div>";
+            }
           } else {
             galleryHtml +=
               '<div class="grid-item">' +
@@ -128,48 +299,80 @@
       } else {
         // Horizontal-Layout (Standard)
         data.gallery.forEach(function (item) {
-          const src = resolveUrl(basePath, item.src);
-          const caption = escapeHtml(item.caption || "");
-          const styleAttr = item.width ? ' style="width:' + escapeHtml(item.width) + '"' : "";
-          if (item.type === "video") {
-            galleryHtml +=
-              '<div class="gallery-item"' +
-              styleAttr +
-              '><video autoplay muted loop playsinline src="' +
-              src +
-              '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)">' +
-              '</video><div class="asset-caption">' +
-              caption +
-              "</div></div>";
+          var src = resolveUrl(basePath, item.src);
+          var caption = escapeHtml(item.caption || "");
+          var styleAttr = item.width ? ' style="width:' + escapeHtml(item.width) + '"' : "";
+          var itemIsYouTube = isYouTubeUrl(src);
+          if (item.type === "video" || itemIsYouTube) {
+            if (itemIsYouTube) {
+              var embedUrl = getYouTubeEmbedUrl(src);
+              galleryHtml +=
+                '<div class="gallery-item gallery-item-youtube"' + styleAttr + '>' +
+                '<div class="youtube-embed-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000">' +
+                '<iframe src="' + embedUrl + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>' +
+                '</div>' +
+                '<div class="asset-caption">' + caption + "</div></div>";
+            } else {
+              galleryHtml +=
+                '<div class="gallery-item"' + styleAttr + '>' +
+                '<video autoplay muted loop playsinline src="' + src + '" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Video failed:\',this.src)">' +
+                '</video><div class="asset-caption">' + caption + "</div></div>";
+            }
           } else {
             galleryHtml +=
-              '<div class="gallery-item"' +
-              styleAttr +
-              '><img src="' +
-              src +
-              '" alt="' +
-              caption +
-              '" loading="eager" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Image failed:\',this.src)">' +
-              '<div class="asset-caption">' +
-              caption +
-              "</div></div>";
+              '<div class="gallery-item"' + styleAttr + '>' +
+              '<img src="' + src + '" alt="' + caption + '" loading="eager" onerror="this.parentElement.classList.add(\'load-error\');console.error(\'Image failed:\',this.src)">' +
+              '<div class="asset-caption">' + caption + "</div></div>";
           }
         });
       }
     }
 
-    const nav = data.nav || {};
-    const prevHref = nav.prevHref || "index.html#work";
-    const nextHref = nav.nextHref || "index.html#work";
-    const prevTitle = nav.prevTitle || "Overview";
-    const nextTitle = nav.nextTitle || "";
+    var nav = data.nav || {};
+    var prevHref = nav.prevHref || "index.html#work";
+    var nextHref = nav.nextHref || "index.html#work";
+    var prevTitle = nav.prevTitle || "Overview";
+    var nextTitle = nav.nextTitle || "";
+
+    // Hero-Bereich: YouTube oder Video
+    var heroHtml = "";
+    if (isYouTube) {
+      var embedUrl = getYouTubeEmbedUrl(heroSrc);
+      heroHtml =
+        '<div class="hero-youtube">' +
+        '<iframe src="' + embedUrl + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' +
+        "</div>";
+    } else {
+      heroHtml =
+        '<div class="video-loader" id="mainLoader"></div>' +
+        '<video class="hero-video" id="mainVideo" autoplay muted loop playsinline>' +
+        '<source src="' + heroSrc + '" type="' + heroType + '">' +
+        "</video>";
+    }
+
+    // Video-Controls nur bei lokalem Video
+    var controlsHtml = "";
+    if (!isYouTube) {
+      controlsHtml =
+        '<div class="video-controls">' +
+        '<button class="ctrl-btn" id="btnReplay" title="Wiederholen">' +
+        '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>' +
+        "</button>" +
+        '<button class="ctrl-btn" id="btnPlayPause" title="Play/Pause">' +
+        '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>' +
+        "</button>" +
+        '<button class="ctrl-btn" id="btnMute" title="Ton">' +
+        '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>' +
+        "</button>" +
+        '<button class="ctrl-btn" id="btnFit" title="Anpassen">' +
+        '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>' +
+        "</button>" +
+        "</div>";
+    }
 
     return (
       '<header class="hero-section">' +
-      '<div class="video-loader" id="mainLoader"></div>' +
-      '<video class="hero-video" id="mainVideo" autoplay muted loop playsinline>' +
-      '<source src="' + heroSrc + '" type="' + heroType + '">' +
-      "</video>" +
+      heroHtml +
       '<div class="hero-title"><h1>' +
       escapeHtml(data.title || "") +
       "</h1></div>" +
@@ -177,20 +380,7 @@
       '<div class="scroll-text">SCROLL</div>' +
       '<div class="scroll-hint-pill"><div class="scroll-dot"></div></div>' +
       "</div>" +
-      '<div class="video-controls">' +
-      '<button class="ctrl-btn" id="btnReplay" title="Wiederholen">' +
-      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>' +
-      "</button>" +
-      '<button class="ctrl-btn" id="btnPlayPause" title="Play/Pause">' +
-      '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>' +
-      "</button>" +
-      '<button class="ctrl-btn" id="btnMute" title="Ton">' +
-      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>' +
-      "</button>" +
-      '<button class="ctrl-btn" id="btnFit" title="Anpassen">' +
-      '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>' +
-      "</button>" +
-      "</div>" +
+      controlsHtml +
       "</header>" +
       '<div class="info-wrapper">' +
       '<section class="info-section">' +
@@ -204,11 +394,9 @@
       "</section>" +
       "</div>" +
       '<section class="' + gallerySectionClass + '">' +
-      '<div class="sticky-viewport" id="viewport">' +
-      '<div class="horizontal-track" id="track">' +
+      (galleryLayout === "grid" ? "" : '<div class="sticky-viewport" id="viewport"><div class="horizontal-track" id="track">') +
       galleryHtml +
-      "</div>" +
-      "</div>" +
+      (galleryLayout === "grid" ? "" : "</div></div>") +
       "</section>" +
       '<footer class="footer-nav">' +
       '<div class="nav-block prev" onclick="window.location.href=\'' +
@@ -232,6 +420,31 @@
       "</div>" +
       "</div>" +
       "</footer>"
+    );
+  }
+
+  function buildPasswordPage(data, basePath) {
+    var lang = getCurrentLang();
+    var title = data.title || "Confidential";
+    var msg = lang === 'de'
+      ? 'Dieses Projekt ist passwortgeschützt.'
+      : 'This project is password protected.';
+    var placeholder = lang === 'de' ? 'Passwort eingeben' : 'Enter password';
+    var btnText = lang === 'de' ? 'ENTSCHLÜSSELN' : 'UNLOCK';
+    var errorMsg = lang === 'de' ? 'Falsches Passwort.' : 'Wrong password.';
+    var backText = lang === 'de' ? '← Zurück zur Übersicht' : '← Back to overview';
+
+    return (
+      '<div class="password-overlay" id="passwordOverlay">' +
+      '<div class="password-box">' +
+      '<h2>' + escapeHtml(title) + '</h2>' +
+      '<p>' + escapeHtml(msg) + '</p>' +
+      '<input type="password" id="passwordInput" placeholder="' + placeholder + '" autofocus />' +
+      '<div class="error-msg" id="passwordError"></div>' +
+      '<button id="passwordBtn">' + btnText + '</button>' +
+      '<br><a class="btn-back" href="../index.html#work">' + backText + '</a>' +
+      '</div>' +
+      '</div>'
     );
   }
 
@@ -284,13 +497,49 @@
           return;
         }
         root.innerHTML = buildPage(data, basePath);
-        if (window.initProjectPage) window.initProjectPage();
+
+        // Passwort-Logik initialisieren
+        if (data.passwordProtected) {
+          initPasswordProtection(data);
+        } else {
+          if (window.initProjectPage) window.initProjectPage();
+        }
       })
       .catch(function (err) {
         console.error("Project load error:", err);
         showError("Projekt konnte nicht geladen werden: " + id + "<br><small>" + err.message + "</small>");
       });
   });
+
+  function initPasswordProtection(data) {
+    var overlay = document.getElementById('passwordOverlay');
+    var input = document.getElementById('passwordInput');
+    var btn = document.getElementById('passwordBtn');
+    var error = document.getElementById('passwordError');
+
+    function checkPassword() {
+      var pw = input ? input.value : '';
+      // Das Passwort kann in project.json oder als Fallback definiert werden
+      var correctPw = data.password || 'lufthansa2024';
+      if (pw === correctPw) {
+        if (overlay) overlay.style.display = 'none';
+        if (window.initProjectPage) window.initProjectPage();
+      } else {
+        if (error) error.textContent = getCurrentLang() === 'de' ? 'Falsches Passwort.' : 'Wrong password.';
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+      }
+    }
+
+    if (btn) btn.addEventListener('click', checkPassword);
+    if (input) {
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') checkPassword();
+      });
+    }
+  }
 
   setTimeout(function() {
     var root = document.getElementById("project-content");

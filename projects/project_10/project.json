@@ -1,30 +1,31 @@
 {
-  "title": "Liquid Forms",
+  "title": "Aviation",
   "client": "Personal Project",
-  "role": "Concept & WebGL",
-  "year": "2021",
+  "role": "Concept & Animation",
+  "year": "2017",
   "agency": "-",
-  "galleryLayout": "grid",
-  "description": [
-    "A WebGL experiment exploring fluid dynamics and organic form generation in real-time 3D, blending technical experimentation with visual artistry."
+  "galleryLayout": "horizontal",
+  "description_en": [
+    "Long before AI-generated Lego videos became a genre of their own, this existed. Brick Aviation is a fully hand-crafted 3D project — no AI, no shortcuts — built from a personal obsession that goes back decades.",
+    "Growing up in a Lufthansa family, aviation wasn't background noise — it was the texture of childhood. So was Lego. This project is what happens when both of those things are taken completely seriously: meticulously modelled aircraft, Lego-accurate geometry, a world that shouldn't work but does.",
+    "A personal project. All 3D design and animation by me."
+  ],
+  "description_de": [
+    "Lange bevor KI-generierte Lego-Videos ein eigenes Genre wurden, gab es das hier. Brick Aviation ist ein vollständig handgefertigtes 3D-Projekt — kein AI, keine Abkürzungen — entstanden aus einer persönlichen Obsession, die jahrzehntelang zurückreicht.",
+    "Aufgewachsen in einer Lufthansa-Familie war Aviation keine Hintergrundkulisse — es war die Textur der Kindheit. Lego auch. Dieses Projekt ist das Ergebnis, wenn man beides vollkommen ernst nimmt: akribisch modellierte Flugzeuge, Lego-akkurate Geometrie, eine Welt, die eigentlich nicht funktionieren sollte — aber es tut.",
+    "Persönliches Projekt. Gesamtes 3D-Design und Animation von mir."
   ],
   "credits": [
     {
-      "role": "Concept & WebGL",
-      "name": "Timo BÃ¶se"
+      "role": "Concept & Animation",
+      "name": "Timo Böse"
     }
   ],
   "heroVideo": "assets/mov/project_10.webm",
-  "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_10.webm",
-      "caption": "Liquid Forms"
-    }
-  ],
+  "gallery": [],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Neural Net",
+    "prevTitle": "Lufthansa Digital Hangar",
     "prevHref": "../project/?id=project_09",
     "nextLabel": "next project",
     "nextTitle": "Showreel",

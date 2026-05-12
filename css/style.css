@@ -70,11 +70,11 @@ section:not(#what-i-do):not(#contact-section):not(#about) {
   }
 }
 
-/* Work: flexible Höhe */
+/* Work: flexible Höhe – 50% höher für bessere Kachel-Proportionen */
 #work {
     height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 150vh;
+    min-height: 150dvh;
 }
 @media (min-width: 769px) {
   #work {

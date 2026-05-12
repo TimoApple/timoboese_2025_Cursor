@@ -163,7 +163,20 @@ body {
     font-size: 1.25rem; line-height: 1.7; margin-bottom: 25px; color: #333; font-weight: 300;
     opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out);
 }
+.info-text p a {
+    color: #333;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.info-text p a:hover {
+    color: var(--c-accent);
+}
 .info-text p.visible { opacity: 1; transform: translateY(0); }
+
+.info-text {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 40px;
+}
 
 .credits-list {
     margin-top: 80px; font-size: 0.9rem; color: #555;
@@ -254,24 +267,39 @@ body {
 
 .grid-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 40px;
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
 .grid-item {
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
-.grid-item img,
-.grid-item video {
+.grid-item:first-child {
+    grid-column: 2;
+}
+
+.grid-item:first-child img {
     width: 100%;
     height: auto;
     display: block;
+    border: 1px solid #e0e0e0;
+}
+
+.grid-item:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item:not(:first-child) img {
+    width: 100%;
+    flex: 1;
     object-fit: cover;
+    border: 1px solid #e0e0e0;
+    min-height: 0;
 }
 
 .grid-item .asset-caption {
@@ -283,10 +311,18 @@ body {
     font-weight: 300;
 }
 
+/* Bei Grid-Gallery: Footer nicht nach oben ziehen */
+.grid-scroll-container + .footer-nav {
+    margin-top: 0;
+}
+
 @media(max-width: 900px) {
     .grid-gallery {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+    .grid-item:first-child {
+        grid-column: 1;
     }
     .grid-scroll-container {
         padding: 40px 20px;

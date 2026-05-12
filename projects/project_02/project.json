@@ -2,11 +2,24 @@
   "title": "The Last Museum",
   "client": "Personal Project",
   "role": "Concept & Production",
-  "year": "2024",
+  "year": "2025",
   "agency": "-",
   "galleryLayout": "grid",
-  "description": [
-    "An AI-powered video concept exploring the intersection of traditional art curation and artificial intelligence, creating a surreal journey through a museum where exhibits come to life."
+  "description_en": [
+    "What does it mean to make something beautiful that is disappearing? And what does it mean to make it more beautiful than it ever was?",
+    "Every frame in The Last Museum is perfect. The composition, the light, the colour — arranged with a precision no habitat ever had. These are not documents of nature. They are nature as we wish it looked: dramatic, legible, aesthetically resolved. The animal at the centre of each image is the only thing that didn't agree to be there.",
+    "This is not new. The natural history museum invented this logic in the 19th century — dead specimens posed as living, artificial backdrops painted to suggest a world that was already vanishing when the glass case was sealed. We called it education. We called it preservation. We built institutions around it and charged admission.",
+    "The Last Museum doesn't critique that tradition. It continues it — with different tools and without the taxidermy. Which raises an uncomfortable question: is the impulse to aestheticise nature a form of mourning, or is it part of the same extractive relationship that put these animals at risk in the first place?",
+    "The red that bleeds through every image is not a sunset. The black is not night. And the perfection of each still life is not a celebration.",
+    "These animals do not know they are exhibits. They never did."
+  ],
+  "description_de": [
+    "Was bedeutet es, etwas schön zu machen, das verschwindet? Und was bedeutet es, es schöner zu machen als es je war?",
+    "Jedes Bild in The Last Museum ist perfekt. Die Komposition, das Licht, die Farbe — arrangiert mit einer Präzision, die kein natürlicher Lebensraum je besessen hat. Das sind keine Dokumente der Natur. Es ist Natur, wie wir uns wünschen, dass sie aussieht: dramatisch, lesbar, ästhetisch aufgelöst. Das Tier im Zentrum jedes Bildes ist das Einzige, das nicht zugestimmt hat, dort zu sein.",
+    "Das ist nicht neu. Das Naturkundemuseum hat diese Logik im 19. Jahrhundert erfunden — tote Präparate, als lebendig drapiert, künstliche Kulissen, die eine Welt andeuteten, die bereits verschwand als die Vitrine versiegelt wurde. Wir nannten es Bildung. Wir nannten es Bewahrung. Wir bauten Institutionen darum und verlangten Eintritt.",
+    "The Last Museum kritisiert diese Tradition nicht. Es setzt sie fort — mit anderen Werkzeugen und ohne Taxidermie. Was eine unbequeme Frage aufwirft: Ist der Impuls, Natur zu ästhetisieren, eine Form von Trauer — oder ist er Teil derselben extraktiven Beziehung, die diese Tiere überhaupt erst gefährdet hat?",
+    "Das Rot, das durch jedes Bild blutet, ist kein Sonnenuntergang. Das Schwarz ist keine Nacht. Und die Perfektion jedes Stilllebens ist keine Feier.",
+    "Diese Tiere wissen nicht, dass sie Exponate sind. Das wussten sie nie."
   ],
   "credits": [
     {
@@ -16,73 +29,25 @@
   ],
   "heroVideo": "assets/mov/project_02.webm",
   "gallery": [
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/08.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/09.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/10.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/11.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/12.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" },
+    { "src": "assets/img/07.webp" },
+    { "src": "assets/img/08.webp" },
+    { "src": "assets/img/09.webp" },
+    { "src": "assets/img/10.webp" },
+    { "src": "assets/img/11.webp" },
+    { "src": "assets/img/12.webp" }
   ],
   "nav": {
     "prevLabel": "back",
     "prevTitle": "Showreel",
     "prevHref": "../project/?id=project_01",
     "nextLabel": "next project",
-    "nextTitle": "Bilou Wednesday",
+    "nextTitle": "Pro7 TV Idents",
     "nextHref": "../project/?id=project_03"
   }
 }

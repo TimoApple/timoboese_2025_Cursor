@@ -1,76 +1,32 @@
-{
-  "title": "Bilou â€“ Instagram Teaser",
-  "client": "Bilou / Philosophy Brands",
-  "role": "3D Lead & Motion",
-  "year": "2019",
-  "agency": "Direct",
-  "galleryLayout": "horizontal",
-  "description": [
-    "Collaboration with Bilou, a cosmetics brand by Bibisbeautypalace. Recreation of their iconic products in 3D with dynamic animations for social media channels."
+ {
+  "title": "Nike Kobe 8",
+  "client": "Nike USA",
+  "role": "Concept & Design",
+  "year": "2012",
+  "agency": "Polynoid / Blacklist",
+  "galleryLayout": "grid",
+  "description_en": [
+    "Kobe Bryant was more than a basketball player — he was a visual entity. The obsession with detail, the precision, the refusal to accept anything less than complete. It made sense that his signature shoe demanded the same.",
+    "In collaboration with Polynoid, I developed the key visual for the Nike Kobe 8 — drawing from the snake motif embedded in the shoe's design, building an image language that matched the collection's aggression and elegance. The concept went into production and launched with the shoe on November 30, 2012."
   ],
-  "credits": [
-    {
-      "role": "Client",
-      "name": "Philosophy Brands"
-    },
-    {
-      "role": "3D & Motion",
-      "name": "Timo BÃ¶se"
-    },
-    {
-      "role": "Music & Sound",
-      "name": "Giorgio Riolo"
-    }
+  "description_de": [
+    "Kobe Bryant war mehr als ein Basketballspieler — er war eine visuelle Entität. Die Besessenheit fürs Detail, die Präzision, die Weigerung, weniger als das Vollständige zu akzeptieren. Es ergab Sinn, dass sein Signature-Schuh dieselben Ansprüche stellte.",
+    "In Zusammenarbeit mit Polynoid entwickelte ich das Key Visual für den Nike Kobe 8 — ausgehend vom Schlangenmotiv im Design des Schuhs, entstand eine Bildsprache, die Aggression und Eleganz der Kollektion widerspiegelt. Das Konzept ging in Produktion und wurde am 30. November 2012 mit dem Schuh gelauncht."
   ],
   "heroVideo": "assets/mov/project_06.webm",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_06.webm",
-      "caption": "Bilou â€“ Instagram Teaser"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    }
+    { "type": "image", "src": "assets/img/kobe_01.jpg", "caption": "Image courtesy of Nike Inc." },
+    { "type": "image", "src": "assets/img/01.webp", "caption": "" },
+    { "type": "image", "src": "assets/img/02.webp", "caption": "" },
+    { "type": "image", "src": "assets/img/03.webp", "caption": "" },
+    { "type": "image", "src": "assets/img/04.webp", "caption": "" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Toca Me",
+    "prevTitle": "Bilou 2023",
     "prevHref": "../project/?id=project_05",
     "nextLabel": "next project",
-    "nextTitle": "LEGO Aviation",
+    "nextTitle": "Bilou Wednesday",
     "nextHref": "../project/?id=project_07"
   }
 }

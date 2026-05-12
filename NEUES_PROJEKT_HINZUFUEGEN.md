@@ -1,6 +1,8 @@
 # Neues Projekt hinzufügen – Anleitung
 
-So fügst du ein neues Projekt zur Portfolio-Seite hinzu:
+So fügst du ein neues Projekt zur Portfolio-Seite hinzu.
+
+Ausführliche Dokumentation zu allen Feldern: [`PROJEKTE_BEARBEITEN.md`](PROJEKTE_BEARBEITEN.md)
 
 ## 1. Ordner anlegen
 
@@ -8,60 +10,51 @@ Erstelle einen neuen Ordner unter `projects/` mit der nächsten freien ID:
 
 ```
 projects/project_11/
+  project.json
+  assets/
+    mov/
+    img/
 ```
 
-## 2. Dateien im Projektordner
+## 2. `project.json` anlegen
 
-### `project.json` (Pflicht)
 ```json
 {
-  "id": "project_11",
   "title": "Mein Projekt",
   "client": "Kundenname",
   "role": "Motion Design, 3D Animation",
   "year": "2025",
   "agency": "Agenturname (optional)",
   "galleryLayout": "horizontal",
-  "heroVideo": "assets/mov/hero-video.webm",
-  "description": [
-    "Beschreibung Absatz 1.",
-    "Beschreibung Absatz 2."
+  "description_en": [
+    "English description paragraph 1.",
+    "English description paragraph 2."
+  ],
+  "description_de": [
+    "Deutsche Beschreibung Absatz 1.",
+    "Deutsche Beschreibung Absatz 2."
   ],
   "credits": [
     { "role": "Creative Direction", "name": "Timo Böse" },
     { "role": "Animation", "name": "Timo Böse" }
   ],
+  "heroVideo": "assets/mov/project_11.webm",
   "gallery": [
     { "type": "video", "src": "assets/mov/project_11_01.webm", "caption": "Szene 1" },
     { "type": "image", "src": "assets/img/project_11_01.webp", "caption": "Standbild" }
   ],
   "nav": {
-    "prevHref": "project.html?id=project_10",
-    "prevTitle": "Liquid Forms",
-    "nextHref": "index.html#work",
-    "nextTitle": "Overview",
-    "prevLabel": "Zurück",
-    "nextLabel": "Nächstes Projekt"
+    "prevLabel": "back",
+    "prevTitle": "Vorheriges Projekt",
+    "prevHref": "../project/?id=project_10",
+    "nextLabel": "next project",
+    "nextTitle": "Nächstes Projekt",
+    "nextHref": "../project/?id=project_12"
   }
 }
 ```
 
-### `galleryLayout` Optionen
-| Wert | Effekt | Wann? |
-|---|---|---|
-| `"horizontal"` | Horizontale Scroll-Gallery (400vh) | Viele Bilder (≥3) |
-| `"grid"` | Vertikales 2-Spalten-Grid | Wenige Bilder (1-3) |
-
-### Mediendateien
-Lege die Dateien im **Projekt-Ordner** ab (nicht mehr in `assets/`):
-- `assets/mov/` – Videos (.webm oder .mp4)
-- `assets/img/` – Galerie-Bilder (.webp, .jpg, .png)
-
-**Bild-Pfade im JSON** sind relativ zum Projekt-Ordner, z.B.:
-- `"src": "assets/img/01.webp"`
-- `"src": "assets/mov/project_11.webm"`
-
-**Verschiedene Seitenverhältnisse** werden automatisch beibehalten – Hochkant-Bilder werden schmal, Querformat-Bilder breit.
+**Wichtig:** Immer beide Beschreibungen (`description_en` + `description_de`) anlegen!
 
 ## 3. index.html aktualisieren
 
@@ -80,41 +73,61 @@ Füge einen neuen `.project-item` Block im `#work` Section hinzu:
 </div>
 ```
 
-## 4. Übersetzungen hinzufügen
+## 4. Übersetzungen in `data/de.json` und `data/en.json`
 
-In `data/de.json` und `data/en.json` unter `"work"`:
+In beiden Dateien unter `"work"`:
 
 ```json
 "mein_projekt": "Mein Projekt",
 "mein_projekt_meta": "Kategorie"
 ```
 
-## 5. Video in assets ablegen
-
-Kopiere das Thumbnail-Video nach:
-```
-assets/mov/project_11.webm
-```
-
-## 6. Navigation einrichten
+## 5. Navigation einrichten
 
 Passe in `project.json` die `nav`-Einträge an:
 - `prevHref` → Link zum vorherigen Projekt
-- `nextHref` → Link zum nächsten Projekt (oder `index.html#work`)
+- `nextHref` → Link zum nächsten Projekt
+
+Außerdem musst du im **vorherigen** Projekt den `next`-Eintrag und im **nächsten** Projekt den `prev`-Eintrag anpassen, damit die Kette geschlossen bleibt.
+
+## 6. Mediendateien
+
+Lege die Dateien im Projekt-Ordner ab:
+- `assets/mov/` – Videos (.webm oder .mp4)
+- `assets/img/` – Galerie-Bilder (.webp, .jpg, .png)
+
+**Bild-Pfade im JSON** sind relativ zum Projekt-Ordner, z.B.:
+- `"src": "assets/img/01.webp"`
+- `"src": "assets/mov/project_11.webm"`
+
+## YouTube-Videos
+
+Statt einer lokalen Videodatei kannst du auch YouTube-URLs verwenden:
+```json
+"heroVideo": "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+## Passwort-Schutz
+
+Für vertrauliche Projekte:
+```json
+"passwordProtected": true,
+"password": "meinpasswort"
+```
 
 ---
 
 ## Projekt-IDs (aktuell belegt)
 
-| ID | Projekt | Gallery-Layout | Hero-Video |
-|---|---|---|---|
+| ID | Projekt | Layout | Hero |
+|----|---------|--------|------|
 | project_01 | Showreel | horizontal | assets/mov/project_01.webm |
-| project_02 | The Last Museum | grid | assets/mov/project_03.webm |
-| project_03 | Bilou Wednesday | horizontal | assets/mov/project_02.webm |
-| project_04 | Pro7 | horizontal | assets/mov/project_04.webm |
-| project_05 | Toca Me | horizontal | assets/mov/project_05.webm |
-| project_06 | Bilou Flamingo | horizontal | assets/mov/project_06.webm |
-| project_07 | LEGO | horizontal | assets/mov/project_07.webm |
-| project_08 | Porsche | horizontal | assets/mov/project_08.webm |
-| project_09 | Neural Net | grid | assets/mov/project_09.webm |
-| project_10 | Liquid Forms | grid | assets/mov/project_10.webm |
+| project_02 | The Last Museum | grid | assets/mov/project_02.webm |
+| project_03 | Pro7 TV Idents | horizontal | assets/mov/project_03.webm |
+| project_04 | Toca Me | horizontal | assets/mov/project_04.webm |
+| project_05 | Nike Kobe 8 | horizontal | assets/mov/project_05.webm |
+| project_06 | Bilou 2023 | horizontal | assets/mov/project_06.webm |
+| project_07 | Bilou Wednesday | horizontal | assets/mov/project_07.webm |
+| project_08 | Âme | horizontal | YouTube |
+| project_09 | Lufthansa Digital Hangar | horizontal | 🔒 Passwort |
+| project_10 | Aviation | horizontal | assets/mov/project_10.webm |

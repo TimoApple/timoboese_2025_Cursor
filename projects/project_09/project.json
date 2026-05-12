@@ -1,33 +1,26 @@
 {
-  "title": "Neural Net",
-  "client": "Personal Project",
-  "role": "Concept & Design",
-  "year": "2022",
+  "title": "Lufthansa Digital Hangar",
+  "client": "Confidential",
+  "role": "Confidential",
+  "year": "-",
   "agency": "-",
-  "galleryLayout": "grid",
-  "description": [
-    "An R&D exploration into neural network visualization and generative design systems, pushing the boundaries of algorithmic art."
+  "galleryLayout": "horizontal",
+  "passwordProtected": true,
+  "description_en": [
+    "This project is password protected."
   ],
-  "credits": [
-    {
-      "role": "Concept & Design",
-      "name": "Timo BÃ¶se"
-    }
+  "description_de": [
+    "Dieses Projekt ist passwortgeschützt."
   ],
-  "heroVideo": "assets/mov/project_09.webm",
-  "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_09.webm",
-      "caption": "Neural Net"
-    }
-  ],
+  "credits": [],
+  "heroVideo": "",
+  "gallery": [],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Porsche",
+    "prevTitle": "Âme",
     "prevHref": "../project/?id=project_08",
     "nextLabel": "next project",
-    "nextTitle": "Liquid Forms",
+    "nextTitle": "Aviation",
     "nextHref": "../project/?id=project_10"
   }
 }

@@ -69,7 +69,7 @@
 #dynamic-text {
     font-family: 'Montserrat', helvetica, sans-serif;
     font-weight: 300;
-    font-size: clamp(1.5rem, 4vw + 1rem, 6rem); 
+    font-size: 90px !important;
     line-height: 1.1; 
     letter-spacing: -0.02em;
     color: #0c0c0c;

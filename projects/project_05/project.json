@@ -1,84 +1,42 @@
 {
-  "title": "Toca Me 2013 â€“ Event Opener",
-  "client": "Toca Me",
-  "role": "Director & DoP",
-  "year": "2013",
-  "agency": "Lowerground",
+  "title": "Bilou 2023",
+  "client": "Philosophy Brands",
+  "role": "3D Lead & Motion",
+  "year": "2023",
+  "agency": "Direct",
   "galleryLayout": "horizontal",
-  "description": [
-    "For the TOCA ME 2013 event in Munich, a captivating fusion of classic and modern aesthetics. Traditional camera captured Still Life arrangements brought to life with subtle yet captivating 3D animations."
+  "description_en": [
+    "Two new fragrances for Bilou — Funky Cola and Sunny Vibes. The brief: 3D animations that match the brand's signature energy — light, playful, unapologetically fun — built for social media and online campaigns."
+  ],
+  "description_de": [
+    "Zwei neue Düfte für Bilou — Funky Cola und Sunny Vibes. Das Briefing: 3D-Animationen, die zur typischen Energie der Marke passen — leicht, verspielt, konsequent frisch — konzipiert für Social Media und Online-Kampagnen."
   ],
   "credits": [
     {
-      "role": "Director",
-      "name": "Timo BÃ¶se"
+      "role": "Client",
+      "name": "Philosophy Brands"
     },
     {
-      "role": "DoP",
-      "name": "Timo BÃ¶se"
-    },
-    {
-      "role": "3D",
-      "name": "Julio Clavijo, Kay Tennemann, Markus Koos"
-    },
-    {
-      "role": "Produced by",
-      "name": "Lowerground"
-    },
-    {
-      "role": "Audio",
-      "name": "David Kamp"
+      "role": "3D & Motion",
+      "name": "Timo Böse"
     }
   ],
-  "heroVideo": "assets/mov/project_05.webm",
+  "heroVideo": "assets/mov/project_06.webm",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_05.webm",
-      "caption": "Toca Me 2013 â€“ Event Opener"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" },
+    { "src": "assets/img/07.webp" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Pro7",
+    "prevTitle": "Toca Me",
     "prevHref": "../project/?id=project_04",
     "nextLabel": "next project",
-    "nextTitle": "Bilou Flamingo",
+    "nextTitle": "Nike Kobe 8",
     "nextHref": "../project/?id=project_06"
   }
 }

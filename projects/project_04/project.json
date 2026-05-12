@@ -1,91 +1,58 @@
 {
-  "title": "Pro7 â€“ TV Idents",
-  "client": "ProSiebenSat.1 TV Deutschland GmbH",
-  "role": "Direction & Design",
-  "year": "2015",
-  "agency": "Woodblock",
+  "title": "Toca Me",
+  "client": "Toca Me",
+  "role": "Director & DoP",
+  "year": "2013",
+  "agency": "Lowerground",
   "galleryLayout": "horizontal",
-  "description": [
-    "Designed and directed three captivating animations for Pro7, a prestigious German TV station. Each animation was meticulously crafted to represent a distinct color spectrum, symbolizing various programming categories.",
-    "Through expertise in design and direction, the animations came to life in collaboration with Woodblock."
+  "description_en": [
+    "Shot on Red Camera, edited to look like 3D — TOCA ME 2013 is where the aesthetic of the artificial still life took shape. Meticulously arranged compositions, vibrant colour, an uncanny stillness — objects that feel rendered but weren't. The piece was created for the TOCA ME festival in Munich, one of the leading events for digital art and design, and paid tribute to its affiliated artists through a visual language that sits deliberately between photography, film, and CGI.",
+    "This was the beginning of a visual approach I've been refining ever since."
+  ],
+  "description_de": [
+    "Gedreht auf Red Camera, geschnitten wie 3D — TOCA ME 2013 ist der Ursprung der Ästhetik des künstlichen Stilllebens. Akribisch arrangierte Kompositionen, intensive Farben, eine unheimliche Stille — Objekte, die gerendert wirken, aber nicht sind. Die Arbeit entstand für das TOCA ME Festival in München, eines der bedeutendsten Events für digitale Kunst und Design, und huldigte seinen assoziierten Künstlern in einer visuellen Sprache, die bewusst zwischen Fotografie, Film und CGI angesiedelt ist.",
+    "Das war der Beginn einer visuellen Haltung, die ich seitdem weiterentwickle."
   ],
   "credits": [
     {
-      "role": "Client",
-      "name": "ProSiebenSat.1 TV Deutschland GmbH"
+      "role": "Director",
+      "name": "Timo Böse"
     },
     {
-      "role": "Direction & Design",
-      "name": "Timo BÃ¶se"
+      "role": "DoP",
+      "name": "Timo Böse"
     },
     {
-      "role": "Production",
-      "name": "Woodblock"
+      "role": "3D",
+      "name": "Julio Clavijo, Kay Tennemann, Markus Koos"
     },
     {
-      "role": "Music & Sound",
-      "name": "Michael Fakesch"
+      "role": "Produced by",
+      "name": "Lowerground"
+    },
+    {
+      "role": "Audio",
+      "name": "David Kamp"
     }
   ],
   "heroVideo": "assets/mov/project_04.webm",
   "gallery": [
-    {
-      "type": "video",
-      "src": "assets/mov/project_04.webm",
-      "caption": "Pro7 â€“ TV Idents"
-    },
-    {
-      "type": "image",
-      "src": "assets/img/01.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/02.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/03.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/04.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/05.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/06.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/07.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/08.webp",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "assets/img/09.webp",
-      "caption": ""
-    }
+    { "src": "assets/img/01.webp" },
+    { "src": "assets/img/02.webp" },
+    { "src": "assets/img/03.webp" },
+    { "src": "assets/img/04.webp" },
+    { "src": "assets/img/05.webp" },
+    { "src": "assets/img/06.webp" },
+    { "src": "assets/img/07.webp" },
+    { "src": "assets/img/08.webp" },
+    { "src": "assets/img/09.webp" }
   ],
   "nav": {
     "prevLabel": "back",
-    "prevTitle": "Bilou Wednesday",
+    "prevTitle": "Pro7 TV Idents",
     "prevHref": "../project/?id=project_03",
     "nextLabel": "next project",
-    "nextTitle": "Toca Me",
+    "nextTitle": "Nike Kobe 8",
     "nextHref": "../project/?id=project_05"
   }
 }

@@ -176,6 +176,83 @@
     <script src="./js/main.combined.js?v=1" defer></script>
     
 <style>
+/* ═══════ COOKIE BANNER ═══════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 24px 32px;
+  max-width: 520px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: none;
+  animation: cookieFadeIn 0.5s ease-out;
+}
+@keyframes cookieFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.cookie-banner-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px 0;
+}
+.cookie-banner-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.cookie-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cookie-btn-primary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0c0c0c;
+}
+.cookie-btn-primary:hover {
+  background: #ffffff;
+  transform: scale(1.02);
+}
+.cookie-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.cookie-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+@media(max-width: 480px) {
+  .cookie-banner {
+    bottom: 16px;
+    padding: 20px;
+    max-width: 95%;
+  }
+  .cookie-banner-buttons {
+    flex-direction: column;
+  }
+  .cookie-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* ═══════ PAGE TRANSITION ═══════ */
 .page-transition {
   position: fixed;
@@ -271,100 +348,100 @@
                     <!-- 2. The Last Museum -->
                     <div class="project-item" onclick="openProject('project_02')">
                         <div class="project-media">
-                            <video loading="lazy" src="./assets/mov/project_03.webm" muted loop playsinline preload="none" aria-describedby="project3"></video>
+                            <video loading="lazy" src="./assets/mov/project_02.webm" muted loop playsinline preload="none" aria-describedby="project2"></video>
                         </div>
                         <div class="project-info">
                             <div class="project-title" data-i18n="work.museum">The Last Museum</div>
                             <div class="project-meta" data-i18n="work.museum_meta">AI Video Concept</div>
                         </div>
                     </div>
-                    <!-- 3. Bilou Wednesday -->
+                    <!-- 3. Pro7 TV Idents -->
                     <div class="project-item" onclick="openProject('project_03')">
                         <div class="project-media">
-                            <video loading="lazy" src="./assets/mov/project_02.webm" muted loop playsinline preload="none" aria-describedby="bilou-wed"></video>
+                            <video loading="lazy" src="./assets/mov/project_03.webm" muted loop playsinline preload="none" aria-describedby="project3"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.bilou_wed">Bilou Wednesday</div>
-                            <div class="project-meta" data-i18n="work.bilou_wed_meta">Campaign Visuals</div>
+                            <div class="project-title" data-i18n="work.pro7">Pro7 TV Idents</div>
+                            <div class="project-meta" data-i18n="work.pro7_meta">Broadcast Design</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid-row row-2">
-                    <!-- 4. Pro7 -->
+                    <!-- 4. Toca Me -->
                     <div class="project-item" onclick="openProject('project_04')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_04.webm" muted loop playsinline preload="none" aria-describedby="project4"></video>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-title" data-i18n="work.pro7">Pro7</div>
-                            <div class="project-meta" data-i18n="work.pro7_meta">TV Idents</div>
-                        </div>
-                    </div>
-                    <!-- 5. Toca Me -->
-                    <div class="project-item" onclick="openProject('project_05')">
-                        <div class="project-media">
-                            <video loading="lazy" src="./assets/mov/project_05.webm" muted loop playsinline preload="none" aria-describedby="project5"></video>
                         </div>
                         <div class="project-info">
                             <div class="project-title" data-i18n="work.toca_me">Toca Me</div>
                             <div class="project-meta" data-i18n="work.toca_me_meta">Event Opener</div>
                         </div>
                     </div>
+                    <!-- 5. Bilou 2023 -->
+                    <div class="project-item" onclick="openProject('project_05')">
+                        <div class="project-media">
+                            <video loading="lazy" src="./assets/mov/project_05.webm" muted loop playsinline preload="none" aria-describedby="project5"></video>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title" data-i18n="work.bilou_2023">Bilou 2023</div>
+                            <div class="project-meta" data-i18n="work.bilou_2023_meta">Campaign Visuals</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid-row row-3">
-                    <!-- 6. Bilou Flamingo -->
+                    <!-- 6. Nike Kobe 8 -->
                     <div class="project-item" onclick="openProject('project_06')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_06.webm" muted loop playsinline preload="none" aria-describedby="project6"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.bilou_fla">Bilou Flamingo</div>
-                            <div class="project-meta" data-i18n="work.bilou_fla_meta">Product Campaign</div>
+                            <div class="project-title" data-i18n="work.nike_kobe">Nike Kobe 8</div>
+                            <div class="project-meta" data-i18n="work.nike_kobe_meta">Key Visual</div>
                         </div>
                     </div>
-                    <!-- 7. LEGO -->
+                    <!-- 7. Bilou Wednesday -->
                     <div class="project-item" onclick="openProject('project_07')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_07.webm" muted loop playsinline preload="none" aria-describedby="project7"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.lego">LEGO</div>
-                            <div class="project-meta" data-i18n="work.lego_meta">Product Animation</div>
+                            <div class="project-title" data-i18n="work.bilou_wed">Bilou Wednesday</div>
+                            <div class="project-meta" data-i18n="work.bilou_wed_meta">Limited Edition</div>
                         </div>
                     </div>
-                    <!-- 8. Porsche -->
+                    <!-- 8. Âme -->
                     <div class="project-item" onclick="openProject('project_08')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_08.webm" muted loop playsinline preload="none" aria-describedby="project8"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.porsche">Porsche</div>
-                            <div class="project-meta" data-i18n="work.porsche_meta">Genf Autosalon</div>
+                            <div class="project-title" data-i18n="work.ame">Âme</div>
+                            <div class="project-meta" data-i18n="work.ame_meta">Album Artwork & Visuals</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid-row row-4">
-                    <!-- 9. Neural Net / R&D -->
+                    <!-- 9. Lufthansa Digital Hangar -->
                     <div class="project-item" onclick="openProject('project_09')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_09.webm" muted loop playsinline preload="none" aria-describedby="project9"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.neural">Neural Net</div>
-                            <div class="project-meta" data-i18n="work.neural_meta">R&D System</div>
+                            <div class="project-title" data-i18n="work.lufthansa">Lufthansa Digital Hangar</div>
+                            <div class="project-meta" data-i18n="work.lufthansa_meta">Confidential</div>
                         </div>
                     </div>
-                    <!-- 10. Liquid Forms -->
+                    <!-- 10. Aviation -->
                     <div class="project-item" onclick="openProject('project_10')">
                         <div class="project-media">
                             <video loading="lazy" src="./assets/mov/project_10.webm" muted loop playsinline preload="none" aria-describedby="project10"></video>
                         </div>
                         <div class="project-info">
-                            <div class="project-title" data-i18n="work.liquid">Liquid Forms</div>
-                            <div class="project-meta" data-i18n="work.liquid_meta">WebGL Experiment</div>
+                            <div class="project-title" data-i18n="work.aviation">Aviation</div>
+                            <div class="project-meta" data-i18n="work.aviation_meta">3D Animation</div>
                         </div>
                     </div>
                 </div>
@@ -396,6 +473,36 @@
 </script>
 
     </main>
+
+    <!-- ═══════ COOKIE BANNER JS ═══════ -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('cookieBanner');
+        if (!banner) return;
+        if (!localStorage.getItem('cookieConsent')) {
+            banner.style.display = 'block';
+        }
+        document.getElementById('cookieAccept').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.style.display = 'none';
+        });
+        document.getElementById('cookieDecline').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.style.display = 'none';
+        });
+    });
+    </script>
+
+    <!-- ═══════ COOKIE BANNER ═══════ -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <p data-i18n="cookie.text">Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern. Mit der Nutzung stimmst du der Verwendung von Cookies zu.</p>
+            <div class="cookie-banner-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-btn-primary" data-i18n="cookie.accept">Akzeptieren</button>
+                <button id="cookieDecline" class="cookie-btn cookie-btn-secondary" data-i18n="cookie.decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
 
     <div id="imprintOverlay" class="overlay">
         <div class="overlay-inner">
