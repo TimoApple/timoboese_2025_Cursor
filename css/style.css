@@ -220,6 +220,14 @@ section:not(#what-i-do):not(#contact-section):not(#about) {
     height: 40dvh !important;
     min-height: 200px !important;
   }
+  .project-item .project-info {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .project-item .project-media video {
+    filter: blur(0) !important;
+    transform: scale(1) !important;
+  }
   .project-info .project-title {
     font-size: 13px !important;
   }
@@ -264,6 +272,7 @@ section:not(#what-i-do):not(#contact-section):not(#about) {
     padding: 10px !important;
   }
 }
+
 
 @media (max-width: 380px) {
   #about .content-wrapper {

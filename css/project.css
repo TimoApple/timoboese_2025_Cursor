@@ -384,9 +384,15 @@ body {
     .credits-list { margin-top: 40px; padding-top: 20px; }
     .btn-close { width: 44px; height: 44px; top: 10px; right: 10px; }
     .btn-close svg { width: 18px; height: 18px; }
-    .video-controls { bottom: 16px; right: 16px; padding: 8px; }
+    .video-controls { bottom: 16px; right: 16px; padding: 8px; gap: 8px; }
     .ctrl-btn { width: 30px; height: 30px; }
+    .ctrl-btn svg { width: 16px; height: 16px; }
     .scroll-hint-wrapper { bottom: 16px; left: 16px; }
     .nav-block { height: auto; min-height: 15vh; padding: 16px; }
     .nav-title { font-size: 1.5rem; }
+    /* Gallery auf kleinen Screens: Assets vollbreit */
+    .gallery-item { max-height: 40vh; }
+    .gallery-item img, .gallery-item video { max-height: 40vh; }
 }
+
+

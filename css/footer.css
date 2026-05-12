@@ -267,6 +267,27 @@
   }
 }
 
+/* 3. Extra kleine Screens (<380px) */
+@media (max-width: 380px) {
+  .contact-links {
+    gap: 8px;
+  }
+  .contact-links a {
+    font-size: 9px;
+  }
+  .legal-links {
+    gap: 12px;
+    font-size: 9px;
+  }
+  .footer-ticker {
+    height: 28px !important;
+  }
+  .ticker-track img {
+    height: 18px !important;
+  }
+}
+
+
 
 body .overlay {
     z-index: 999999 !important;

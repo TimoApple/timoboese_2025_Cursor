@@ -138,7 +138,26 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: true }
   );
 
+  // 4b. LANGUAGE SWITCH TOUCH TOGGLE (Mobile)
+  const langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch && window.innerWidth <= 768) {
+    langSwitch.addEventListener('click', function(e) {
+      // Nur togglen wenn nicht auf einen Dropdown-Button geklickt wurde
+      if (!e.target.closest('.lang-dropdown .lang-switch-btn')) {
+        e.preventDefault();
+        this.classList.toggle('active');
+      }
+    });
+    // Schließen bei Klick außerhalb
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.lang-switch')) {
+        langSwitch.classList.remove('active');
+      }
+    });
+  }
+
   // 5. LOTTIE ANIMATION – nach load starten, damit Lottie-Bibliothek sicher da ist
+
   function initLottieLogo() {
     const c = document.getElementById("lottieLogoContainer");
     if (!c) return;

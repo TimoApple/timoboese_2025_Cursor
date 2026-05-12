@@ -111,11 +111,14 @@ window.initLiquidText = function() {
 
     animateLoop();
 
+    // Mobile: schnellere Animation, weniger Delay zwischen Buchstaben
+    const charDelay = window.innerWidth > 768 ? 30 : 8;
     setTimeout(() => {
         charElements.forEach((c, i) => {
-            setTimeout(() => c.el.classList.add('visible'), i * 30);
+            setTimeout(() => c.el.classList.add('visible'), i * charDelay);
         });
     }, 100);
+
 
     const textObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
